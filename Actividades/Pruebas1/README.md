@@ -59,6 +59,14 @@ En la década de 1990, el vehículo de lanzamiento Ariane 5, diseñado y constru
 - El software exhibe un comportamiento discontinuo, a diferencia de muchos sistemas diseñados físicamente. 
 - La verificación de tipos estáticos podría haber detectado este error.
 
+**Respuestas**
+
+- Aunque el software del Ariane 5 se diseñó con altos estándares de calidad y se probó rigurosamente, aún tenía un error que resultó en la pérdida del cohete.
+- Si es la mejor solución, pero no siempre es posible o práctico de realizar.
+- El error en el software del Ariane 5 se debió a un problema de desbordamiento que no se presentó en el diseño del Ariane 4. Este tipo de comportamiento discontinuo es difícil de detectar y puede llevar a errores inesperados.
+- Es correcto afirmar que la verificación de tipos estáticos pudo haber detectado este error, pero esto no garantiza la ausencia de errores. El error se debió a la reutilización del software del Ariane 4, que no se probó exhaustivamente.
+
+
 ### Pruebas sistemáticas 
 
 En lugar de pruebas exhaustivas, o aleatorias, queremos probar de manera sistemática. 
