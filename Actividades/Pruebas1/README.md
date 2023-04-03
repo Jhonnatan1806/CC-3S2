@@ -92,7 +92,6 @@ Un conjunto de pruebas es correcto si:
 - Esto quiere decir que la implementación funciona correctamente en todos los casos.
 - Esto quiere decir que la implementación es adecuada para algunos usos previstos.
 
-
 **Ejercicio 4**
 
 Un conjunto de pruebas vacío no contiene casos de prueba. Suponiendo una especificación no trivial, un conjunto de pruebas vacío es: 
@@ -100,6 +99,11 @@ Un conjunto de pruebas vacío no contiene casos de prueba. Suponiendo una especi
 - Correcto 
 - Exhaustivo 
 - Pequeña
+
+**Respuestas**
+
+- Un conjunto de pruebas vacío no puede ser **exhaustivo** porque no cubre ningún caso. Además, no puede ser **pequeño** ya que no contiene ningún caso. Sin embargo, se puede considerar **correcto** ya que, en teoría, no debería haber errores en la implementación que no se cubran por el conjunto de pruebas vacío.
+
 
 ### Elección de casos de prueba mediante partición
 
