@@ -83,7 +83,15 @@ Un conjunto de pruebas es correcto si:
 - Todos sus casos de prueba fallan cuando se ejecutan en una implementación con errores 
 - Algún caso de prueba falla cuando se ejecuta en una implementación con errores
 - Todos sus casos de prueba pasan cuando se ejecutan en una implementación legal 
-- algunos casos de prueba pasan cuando se ejecutan en una implementación legal 
+- Algunos casos de prueba pasan cuando se ejecutan en una implementación legal 
+
+**Respuestas**
+
+- Esto quiere decir que el conjunto de pruebas puede detectar errores en la implementación del software.
+- Esto quiere decir que si todos los casos de prueba pasan, pero la implementación tiene errores, es posible que no se haya cubierto adecuadamente el conjunto de casos de prueba.
+- Esto quiere decir que la implementación funciona correctamente en todos los casos.
+- Esto quiere decir que la implementación es adecuada para algunos usos previstos.
+
 
 **Ejercicio 4**
 
