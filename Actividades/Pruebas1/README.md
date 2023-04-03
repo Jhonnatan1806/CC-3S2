@@ -102,7 +102,7 @@ Un conjunto de pruebas vacío no contiene casos de prueba. Suponiendo una especi
 
 **Respuestas**
 
-- Un conjunto de pruebas vacío no puede ser **exhaustivo** porque no cubre ningún caso. Además, no puede ser **pequeño** ya que no contiene ningún caso. Sin embargo, se puede considerar **correcto** ya que, en teoría, no debería haber errores en la implementación que no se cubran por el conjunto de pruebas vacío.
+- Un conjunto de pruebas vacío no puede ser **exhaustivo** porque no cubre ningún caso. Además, no puede ser **pequeño** ya que no contiene ningún caso. Sin embargo, se puede considerar **correcto** ya que no debería haber errores en la implementación que no se cubran por el conjunto de pruebas vacío.
 
 
 ### Elección de casos de prueba mediante partición
@@ -193,6 +193,11 @@ Evalúe la calidad de cada una de las siguientes particiones candidatas. ¿Son l
 - Los subdominios están completos 
 - Los subdominios son correctos
 
+**Respuestas**
+
+- Los subdominios son disjuntos: Si, ya que un número no puede ser negativo y no negativo al mismo tiempo.
+- Los subdominios están completos: Si, ya que cubre todos los casos.
+- Los subdominios son correctos: No, ya que no cubre todos los casos, en particular no es posible cubrir el subdominio x < 0 ya que el parametro de entrada debe ser no negativo.
 
 ```
 // particion: x es un cuadrado perfecto; x es > 0 pero no es un cuadrado perfecto
@@ -203,6 +208,11 @@ Evalúe la calidad de cada una de las siguientes particiones candidatas. ¿Son l
 - Los subdominios están completos 
 - Los subdominios son correctos
 
+**Respuestas**
+- Los subdominios son disjuntos: Sí, ya que no hay ningún número que sea al mismo tiempo un cuadrado perfecto y un no cuadrado perfecto
+- Los subdominios están completos: Sí, ya que cubre todos los casos.
+- Los subdominios son correctos: Sí, los subdominios son correctos ya que cualquier número entero positivo es o bien un cuadrado perfecto o no lo es.
+
 ```
 // particion: x=0, x=1, x=7, x=16
 ``` 
@@ -210,6 +220,11 @@ Evalúe la calidad de cada una de las siguientes particiones candidatas. ¿Son l
 - Los subdominios son disjuntos 
 - Los subdominios están completos 
 - Los subdominios son correctos
+
+**Respuestas**
+- Los subdominios son disjuntos: Si, los subdominios son disjuntos. 
+- Los subdominios están completos: No, los subdominios no estan completos claramente faltan muchos valores posibles de x.
+- Los subdominios son correctos: No, ya que algunos de los subdominios no pueden ser cubiertos por un caso de prueba legal.
 
 
 **Ejercicio 6**
