@@ -419,6 +419,10 @@ De entre las opciones a continuación, elija un subconjunto que serían particio
 - particion en a: `1, !=1`
 - particion en a: (donde "pequeño" encaja en long y "grande" no)
 
+**Respuestas**
+
+Una particion en a: a = 0, a = 1, a > 1, a < 0, a > Long.MAX_VALUE, a < Long.MIN_VALUE, 0 < a < 1, a != 0, a != 1, capturaría los mismos intereses 
+
 **Ejercicio 9**
 
 Considera nuevamente esta partición `a` en un desde arriba:
@@ -478,6 +482,10 @@ Con este enfoque, ¿cuántos casos de prueba se necesitan para cubrir las siguie
 // particion en b: 0, positive, negativo
 // particion en a.multiply(b): 0, positivo, negativo
 ````
+
+**Respuestas**
+
+Para cada partición de a, debemos considerar todas las particiones posibles de b, y para cada una de esas combinaciones debemos considerar la partición correspondiente de a.multiply(b). Por lo tanto, necesitamos cubrir todas las combinaciones posibles de las particiones para a, b y a.multiply(b), por lo tanto se necesitarían 27 casos de prueba.
 
 ### Cobertura
 
