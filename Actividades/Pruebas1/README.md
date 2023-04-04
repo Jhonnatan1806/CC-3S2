@@ -258,28 +258,21 @@ Evalúa cada una de las siguientes particiones candidatas para gcd.
 - Los subdominios son correctos: Sí, ya que este subdominio representa todas las posibles entradas válidas para la función gcd.
 
 ```
-// particion: x es divisible por y;  
+// particion: x es divisible por y; y es divisible por x;
 ```
 
-- Los subdominios son disjuntos 
-- Los subdominios están completos 
-- Los subdominios son correctos
+- Los subdominios son disjuntos: Si, los subconjuntos de los divisores comunes más grandes de "x" e "y" son disjuntos, ya que cualquier divisor que se comparta entre los dos números debe ser un divisor de "y".
+- Los subdominios están completos: No, si "x" es 15 y "y" es 3, entonces el gcd es 3. Cuyos divisores son 1 y 3, faltaría el 2 para que sea completo.
+- Los subdominios son correctos: Si, cualquier subconjunto de los divisores comunes de "x" e "y" que incluya todos los factores primos comunes será correcto.
 
-```
-// particion: y es divisible por x;
-```
-
-- Los subdominios son disjuntos 
-- Los subdominios están completos 
-- Los subdominios son correctos
 
 ```
 // particion: x e y son primeros relativos;
 ```
 
-- Los subdominios son disjuntos 
-- Los subdominios están completos 
-- Los subdominios son correctos
+- Los subdominios son disjuntos: Si, no tienen factores primos comunes excepto 1, entonces los subdominios de su GCD serán disjuntos.
+- Los subdominios están completos: No, ya que el único divisor común de "x" e "y" es 1, que es el GCD de "x" e "y".
+- Los subdominios son correctos: Si, cualquier subdominio de los divisores comunes de "x" e "y" que contenga únicamente el número 1 como divisor común será considerado correcto.
 
 
 ### Incluir límites en la partición 
