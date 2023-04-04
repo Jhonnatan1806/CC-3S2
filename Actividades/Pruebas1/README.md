@@ -258,7 +258,23 @@ Evalúa cada una de las siguientes particiones candidatas para gcd.
 - Los subdominios son correctos: Sí, ya que este subdominio representa todas las posibles entradas válidas para la función gcd.
 
 ```
-// particion: x es divisible por y; y es divisible por x; x e y son primeros relativos
+// particion: x es divisible por y;  
+```
+
+- Los subdominios son disjuntos 
+- Los subdominios están completos 
+- Los subdominios son correctos
+
+```
+// particion: y es divisible por x;
+```
+
+- Los subdominios son disjuntos 
+- Los subdominios están completos 
+- Los subdominios son correctos
+
+```
+// particion: x e y son primeros relativos;
 ```
 
 - Los subdominios son disjuntos 
