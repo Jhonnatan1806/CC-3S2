@@ -251,13 +251,20 @@ Evalúa cada una de las siguientes particiones candidatas para gcd.
 - Los subdominios están completos 
 - Los subdominios son correctos
 
+**Respuestas**
+
+- Los subdominios son disjuntos: Sí, ya que cada posible combinación de valores para x e y representa un subdominio distinto.
+- Los subdominios están completos: Sí, ya que podemos encontrar cualquier posible combinación de valores para x e y que cumpla con la restricción "x, y son distintos de 0".
+- Los subdominios son correctos: Sí, ya que este subdominio representa todas las posibles entradas válidas para la función gcd.
+
 ```
 // particion: x es divisible por y; y es divisible por x; x e y son primeros relativos
 ```
-`
+
 - Los subdominios son disjuntos 
 - Los subdominios están completos 
 - Los subdominios son correctos
+
 
 ### Incluir límites en la partición 
 
@@ -309,6 +316,7 @@ a = Integer.MAX_VALUE
 a = 17 para cubrir el subdominio 0 < a < Integer.MAX_VALUE 
 a = -3 para cubrir el subdominio Integer.MIN_VALUE < a < 0 
 ```
+
 **Ejercicio 7**
 
 Para esta función: 
