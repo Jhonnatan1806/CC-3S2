@@ -331,6 +331,12 @@ double winLossRatio(String winsAndLosses);
 ```
 ¿Cuáles son los valores límite apropiados para probar esta función?
 
+**Respuestas**
+
+- `winsAndLosses = ""` (cadena vacía)
+- `winsAndLosses = "W" o "L"` (cadena de un solo carácter)
+- `winsAndLosses = "WWWWWW", "LLLLL", ...` (cadena de 5 caracteres)
+
 ### Uso de varias particiones 
 
 Un enfoque es tratar las características de cada entrada `a` y `b` como dos particiones separadas del espacio de entrada. Una partición solo considera el valor de `a`: 
