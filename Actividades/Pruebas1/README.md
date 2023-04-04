@@ -485,7 +485,7 @@ Con este enfoque, ¿cuántos casos de prueba se necesitan para cubrir las siguie
 
 **Respuestas**
 
-Para cada partición de a, debemos considerar todas las particiones posibles de b, y para cada una de esas combinaciones debemos considerar la partición correspondiente de a.multiply(b). Por lo tanto, necesitamos cubrir todas las combinaciones posibles de las particiones para a, b y a.multiply(b), por lo tanto se necesitarían 27 casos de prueba.
+Para cada partición de a, debemos considerar todas las particiones posibles de b, y para cada una de esas combinaciones debemos considerar la partición correspondiente de a.multiply(b). Por lo tanto, necesitamos cubrir todas las combinaciones posibles de las particiones para a, b y a.multiply(b), por lo tanto se necesitarían 3x3x3 = 27 casos de prueba.
 
 ### Cobertura
 
