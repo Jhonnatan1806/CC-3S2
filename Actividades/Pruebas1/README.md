@@ -337,6 +337,7 @@ double winLossRatio(String winsAndLosses);
 - `winsAndLosses = "W" o "L"` (cadena de un solo carácter)
 - `winsAndLosses = "WWWWWW", "LLLLL", ...` (cadena de 5 caracteres)
 
+
 ### Uso de varias particiones 
 
 Un enfoque es tratar las características de cada entrada `a` y `b` como dos particiones separadas del espacio de entrada. Una partición solo considera el valor de `a`: 
@@ -420,7 +421,7 @@ Considera nuevamente esta partición `a` en un desde arriba:
 //     a es un entero pequeño > 1
 //     a es un entero pequeño < 0
 //     a es un entero grande positivo
-//      a es un entero grande negativo (donde "pequeño" encaja en long y "grande" no)
+//     a es un entero grande negativo (donde "pequeño" encaja en long y "grande" no)
 ```
 
 Esta partición tiene 6 subdominios, por lo que pueden cubrirla 6 valores diferentes de `a`, uno elegido para cada subdominio. 
@@ -435,6 +436,15 @@ Supongamos que usamos estas tres particiones de a en su lugar:
 
 Si solo queremos cubrir cada subdominio de las tres particiones, ¿cuántos valores diferentes de a necesitaríamos?.
 
+**Respuestas**
+
+Evaluamos para cada caso
+
+- a = 0, un valor positivo y un valor negativo distintos, por lo tanto necesitamos un minimo de 3 valores diferentes de a (subdominio 1)
+- a = 1 y un valor distinto de 1, por lo tanto necesitamos 2 valores diferentes de a (subdominio 2)
+- a = un valor pequeño positivo, un valor pequeño negativo, un valor grande positivo y un valor grande negativo, por lo tanto necesitamos 4 valores diferentes de a (subdominio 3)
+
+En total necesitariamos 3 + 2 + 4 = 9 valores diferentes de a para cubrir cada subdominio de las tres particiones.
 
 **Ejercicio 10**
 
