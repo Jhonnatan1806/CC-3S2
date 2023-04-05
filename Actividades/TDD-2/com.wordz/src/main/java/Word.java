@@ -1,8 +1,9 @@
 public class Word {
     public Word(String correctWord) {
-        // No Implementado
+        // Not Implemented
     }
-
-    public void guess(String attempt) {
+    public Score guess(String attempt) {
+        var score = new Score();
+        return score;
     }
 }
