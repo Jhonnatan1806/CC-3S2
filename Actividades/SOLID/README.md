@@ -2,7 +2,7 @@ Single Responsability Principle (SRP)
 
 **Demostración sin SRP**
 
-![](//assets/e1_without_SRP.png)
+![](//assets/e1_wihtout_SRP.png)
 
 **¿Cuál es el problema con este diseño?**
 
@@ -10,7 +10,7 @@ La clase Empleado tiene dos responsabilidades distintas, mostrar los detalles de
 
 **Demostración con SRP**
 
-![](//assets/e1_with_SRP.png)
+![](//assets/e1_wiht_SRP.png)
 
 **Explicación de resultados**
 
