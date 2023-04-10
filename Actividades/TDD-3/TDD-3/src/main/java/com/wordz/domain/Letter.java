@@ -1,5 +1,5 @@
 package com.wordz.domain;
 
 public enum Letter {
-    CORRECT, PART_CORRECT, INCORRECT
+    INCORRECT,PART_CORRECT, CORRECT;
 }
