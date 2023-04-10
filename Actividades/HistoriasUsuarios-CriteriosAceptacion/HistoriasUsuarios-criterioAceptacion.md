@@ -19,6 +19,15 @@ Inicia un repositorio llamado CC-3S2 y dentro una carpeta llamada Actividades. D
 - El usuario puede seleccionar la función "Exportar a XML". 
 - El usuario puede exportar datos a XML
 
+**Respuestas**
+
+- no
+- depende java
+- si
+- no 
+- si rol/persona: usuario, objetivo: guardar el trabajo, beneficio: el usuario no se olvide de guardar su trabajo
+- si
+- si 
 
 2 .  ¿Cuáles de las siguientes no son buenas historias? ¿Por qué?
 
