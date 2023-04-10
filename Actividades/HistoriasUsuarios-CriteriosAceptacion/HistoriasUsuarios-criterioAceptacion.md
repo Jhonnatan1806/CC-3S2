@@ -55,9 +55,9 @@ En proyectos grandes puede ser dificil manejar cientos o miles de historias de u
 
 No es tan sencillo medir la eficacia de un proyecto con las historias de usuario.
 
-5 . ¿Cómo debes manejar un requisito para que un sistema escale y  lo usen 1000 usuarios simultáneos? 
+5 . ¿Cómo debes manejar un requisito para que un sistema escale y lo usen 1000 usuarios simultáneos? 
 
-
+Segmentando a los usuarios por grupos y creando historias de usuarios para esos grupos
 
 6 . Proporciona algunos ejemplos de sistemas que podrían beneficiarse de una consideración más directa de la interfaz de usuario de lo que normalmente se da en un proyecto ágil.
 
@@ -85,6 +85,8 @@ Más tarde, la interfaz de usuario manejará el valor de descuento recibido y pr
 ```
 
 **Criterios de aceptación** 
+
+
 
 **Dado**
 
