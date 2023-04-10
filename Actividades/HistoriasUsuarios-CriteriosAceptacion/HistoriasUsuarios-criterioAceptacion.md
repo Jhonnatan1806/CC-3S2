@@ -22,7 +22,7 @@ Inicia un repositorio llamado CC-3S2 y dentro una carpeta llamada Actividades. D
 **Respuestas**
 
 - no
-- depende java
+- depende
 - si
 - no 
 - si rol/persona: usuario, objetivo: guardar el trabajo, beneficio: el usuario no se olvide de guardar su trabajo
@@ -37,13 +37,26 @@ Inicia un repositorio llamado CC-3S2 y dentro una carpeta llamada Actividades. D
 - El sistema puede calcular aproximaciones de puntos de silla para distribuciones de formas cuadráticas en variables normales. 
 - Todos los errores de tiempo de ejecución se registran de manera coherente.
 
+**Respuestas**
+
+- no
+- no
+- si
+- no 
+- no
+
+
 3 . ¿Cuáles son cuatro buenas razones para usar historias de usuarios para expresar requisitos? 
 
 
 4 . ¿Cuáles pueden ser dos inconvenientes de usar historias de usuario? 
 
+En proyectos grandes puede ser dificil manejar cientos o miles de historias de usuarios entonces se tienen que hacer seguimientos (tracking).
+
+No es tan sencillo medir la eficacia de un proyecto con las historias de usuario.
 
 5 . ¿Cómo debes manejar un requisito para que un sistema escale y  lo usen 1000 usuarios simultáneos? 
+
 
 
 6 . Proporciona algunos ejemplos de sistemas que podrían beneficiarse de una consideración más directa de la interfaz de usuario de lo que normalmente se da en un proyecto ágil.
