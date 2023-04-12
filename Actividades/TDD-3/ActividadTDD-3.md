@@ -127,6 +127,7 @@ public class Score {
 ```
 **Pregunta** Ejecuta todas las pruebas para ver cómo lo estamos haciendo. Explica tus resultados.
 
+**Respuesta** Se implemento la clase Word y la clase Score con esto se pudo pasar de Rojo a Verde siguiendo la guia.
 
 Ahora entramos en la fase de refactorización del ciclo RGR. Una vez más, TDD nos devuelve el control. ¿Queremos refactorizar? ¿Qué cosas debemos refactorizar? ¿Por qué? ¿Vale la pena hacer esto ahora o podemos posponerlo hasta un paso posterior? 
 
@@ -201,6 +202,8 @@ public class Score {
 ``` 
 
 **Problema:** Analiza y explica el código anterior. ¿Se requiere que cambiemos el código de prueba para reflejar ese cambio en la firma del método?. ¿hay algún riesgo en esto?.
+
+**Respuesta** El método de Word requiere un cambio en el codigo debido a que la funcion guess llama al método assess(metodo de la clase Score) pero este metodo ya no requiere el int 0. No se requiere cambios en el codigo de pruebas, considero que en teoría refactorizar no implicaria necesariamente cambiar el codigo de pruebas a menos que cambiemos o renombremos algunos metodos ya especificados en el codigo de pruebas .
 
 ### Diseño con combinaciones de dos letras 
 
