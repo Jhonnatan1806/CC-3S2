@@ -1,14 +1,15 @@
 {
-  "compilerOptions": {
-    "target": "es6", 
-    "module": "commonjs", 
-    "strict": true, 
-    "esModuleInterop": true, 
-    "outDir": "dist", 
-    "rootDir": "src",
-    "resolveJsonModule": true 
+  "compilerOptions":{
+    "target":"es6",
+    "module":"commonjs",
+    "outDir":"app/dist",
+    "strict":true,
+    "esModuleInterop":true,
   },
-  "include": [
-    "src" 
+  "include":[
+    "app/src/**/*"
+, "app/test/sum.test.ts"  ],
+  "exclude":[
+    "node_modules"
   ]
 }
