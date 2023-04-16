@@ -1,4 +1,4 @@
-# Spring 0
+# Sprint 0
 
 | Categoría | Recomendación |
 |---|---|
