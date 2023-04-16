@@ -14,5 +14,14 @@ La guia de estilos que utilizaremos sera:
 
 **2.	Pruebas unitarias**
 
+Test Suma
+
+![Test Suma](Imagenes/sumaTest.png)
+![Test Resultado](Imagenes/sumaPass.png)
+
+Test Division
+
+![Test Division](Imagenes/divisionTest.png)
+![Test Resultado](Imagenes/divisionPass.png)
 
 **3.	Programación GUI**
