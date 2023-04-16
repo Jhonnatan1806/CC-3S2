@@ -11,3 +11,7 @@ body {
 #__next {
   height: 100%;
 }
+
+button{
+  background-color: #1565c0 !important;
+}

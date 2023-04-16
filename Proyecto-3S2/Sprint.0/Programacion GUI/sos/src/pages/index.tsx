@@ -44,7 +44,7 @@ export default function Home() {
             <div className="w-[15%] flex justify-center">Board Size</div>
           </div>
           <div className="flex flex-grow mt-8 gap-4 ">
-            <div className="flex flex-col justify-between w-[15%]">
+            <div className="flex flex-col justify-between w-[20%]">
               <FormControl>
                 <FormLabel>Blue Player</FormLabel>
                 <RadioGroup
@@ -86,7 +86,7 @@ export default function Home() {
             <div className="flex flex-grow h-full bg-white rounded-xl">
               <canvas id="canvasGame"></canvas>
             </div>
-            <div className="flex flex-col justify-between w-[15%]">
+            <div className="flex flex-col justify-between w-[20%]">
               <FormControl>
                 <FormLabel>Red Player</FormLabel>
                 <RadioGroup
@@ -127,17 +127,17 @@ export default function Home() {
             </div>
           </div>
           <div className="flex justify-between items-center flex-wrap mt-8 ">
-            <div className="flex gap-2">
+            <Button variant="contained">
               <Image
                 src="/images/save.svg" // Ruta al archivo SVG en tu proyecto
                 alt="save"
                 width={18}
                 height={18}
               />
-              <h2>Record Game</h2>
-            </div>
-            <div>Current Turn</div>
-            <div>
+              <p className="ml-2">Record Game</p>
+            </Button>
+            <p><strong>Current Turn: </strong>blue (or red)</p>
+            <div className="flex flex-col gap-2">
               <Button variant="contained">Replay</Button>
               <Button variant="contained">New Game</Button>
             </div>
