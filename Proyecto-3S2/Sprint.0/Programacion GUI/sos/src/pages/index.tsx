@@ -1,10 +1,12 @@
 import * as React from "react";
+import Button from "@mui/material/Button";
 import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormControl from "@mui/material/FormControl";
 import FormLabel from "@mui/material/FormLabel";
 import Image from 'next/image';
+
 
 export default function Home() {
   return (
@@ -125,11 +127,19 @@ export default function Home() {
             </div>
           </div>
           <div className="flex justify-between items-center flex-wrap mt-8 ">
-            <div>Record Game</div>
+            <div className="flex gap-2">
+              <Image
+                src="/images/save.svg" // Ruta al archivo SVG en tu proyecto
+                alt="save"
+                width={18}
+                height={18}
+              />
+              <h2>Record Game</h2>
+            </div>
             <div>Current Turn</div>
             <div>
-              <div>Replay</div>
-              <div>New Game</div>
+              <Button variant="contained">Replay</Button>
+              <Button variant="contained">New Game</Button>
             </div>
           </div>
         </div>
