@@ -1,5 +1,5 @@
 # Sprint 0
-
+**1.	Decisiones claves para el proyecto SOS of the SOS**
 | Categoría | Recomendación |
 |---|---|
 | Lenguaje de programación orientado a objetos | TypeScript | 
@@ -11,3 +11,8 @@
 
 La guia de estilos que utilizaremos sera:
 `https://google.github.io/styleguide/tsguide.html`
+
+**2.	Pruebas unitarias**
+
+
+**3.	Programación GUI**
