@@ -7,6 +7,7 @@ export default class Board {
   private rows: number;
   private columns: number;
   private board: string[][];
+  private gameMode: boolean;
 
   /**
    * Crea un nuevo tablero con el número de filas y columnas especificado.
@@ -18,6 +19,7 @@ export default class Board {
     this.rows = rows;
     this.columns = columns;
     this.board = [];
+    this.gameMode = true;
 
     for (let i = 0; i < rows; i++) {
       const fila = new Array(columns).fill("");
@@ -52,6 +54,15 @@ export default class Board {
     return this.columns;
   }
 
+  /**
+   * Devuelve el modo de juego del tablero.
+   * 
+   * @returns El modo de juego del tablero que por defecto es "simple".
+   * true = "simple" & false = "general"
+   */
+  public getGameMode(): boolean {
+    return this.gameMode;
+  }
   /**
    * Coloca una letra en la posición especificada del tablero.
    * 
