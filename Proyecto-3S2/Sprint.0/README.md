@@ -1,5 +1,5 @@
 # Sprint 0
-# Decisiones claves para el proyecto SOS of the SOS
+## Decisiones claves para el proyecto SOS of the SOS
 | Categoría | Recomendación |
 |---|---|
 | Lenguaje de programación orientado a objetos | TypeScript | 
@@ -12,7 +12,7 @@
 La guia de estilos que utilizaremos sera:
 `https://google.github.io/styleguide/tsguide.html`
 
-# Pruebas unitarias
+## Pruebas unitarias
 
 **Función Suma**
 
@@ -70,6 +70,6 @@ test('Prueba de division', () => {
 
 ![Test Resultado](Imagenes/divisionPass.png)
 
-# Programación GUI
+## Programación GUI
 
 ![GUI](Imagenes/GUI.png)
