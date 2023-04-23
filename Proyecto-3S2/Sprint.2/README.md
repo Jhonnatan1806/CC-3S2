@@ -14,7 +14,7 @@
 
 | Nombre e ID de historia de usuario | AC ID | Nombre Clase(s) | Nombre Método(s) | Estatus (completo o no) | Notas (opcional) |
 |---|---|---|---|---|---|
-| 1. Escoge el tamaño del tablero | | | | | |
+| 1. Escoge el tamaño del tablero | 1.1 | Board | - getBoard - getRows - getColumns - getGameMode - setGameMode - putLetter | incompleto | En la imagen del resumen no se aprecia todos los métodos más en el código dentro de la carpeta sos si. |
 | 2. Escoge el modo de juego de un tablero escogido | | | | | |
 | 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos  | | | | | |
 | 4. Hacer un movimiento en un juego simple | | | | | |
