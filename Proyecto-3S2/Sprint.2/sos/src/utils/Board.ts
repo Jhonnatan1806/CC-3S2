@@ -4,9 +4,9 @@
  */
 export default class Board {
 
-  private rows: number;
-  private columns: number;
-  private board: string[][];
+  private readonly rows: number;
+  private readonly columns: number; 
+  private board: string[][]; 
   private gameMode: boolean;
 
   /**
@@ -63,6 +63,16 @@ export default class Board {
   public getGameMode(): boolean {
     return this.gameMode;
   }
+
+  /**
+   * Selecciona el modo de juego.
+   * 
+   * true = "simple" & false = "general"
+   */
+  public setGameMode(gameMode: boolean) {
+    this.gameMode = gameMode;
+  }
+
   /**
    * Coloca una letra en la posición especificada del tablero.
    * 
