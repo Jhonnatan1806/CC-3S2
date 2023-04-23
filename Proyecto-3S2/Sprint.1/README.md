@@ -28,9 +28,8 @@ A continuación se muestra una tabla con las prioridades de las historias de usu
 
 | Nombre e ID de la historia de usuario| AC ID | Descripción de los criterios de aceptación | Estatus |
 |---|---|---|---|
-| 1. Escoge el tamaño del tablero | AC 1.1 | **CUANDO** el jugador inicie el juego de `SOS`, se le debe permitir escoger el tamaño del tablero. **ENTONCES**, se debe mostrar una lista de opciones con diferentes tamaños de tablero. | Pendiente | 
-| | AC 1.2 | **CUANDO** el jugador seleccione un tamaño de tablero, **ENTONCES**, el sistema debe mostrar el tablero con el tamaño seleccionado. | Pendiente | 
-| | AC 1.3 | **CUANDO** el usuario no selecciona un tamaño de tablero, se debe utilizar el tamaño `3x3` de manera predeterminada. **ENTONCES**, si el usuario inicia una partida sin haber seleccionado un tamaño de tablero, el juego debe iniciarse en el tablero `3x3`. | Pendiente |
+| 1. Escoge el tamaño del tablero | AC 1.1 | **CUANDO** el jugador inicie el juego de `SOS`, se le debe permitir escoger el tamaño del tablero. **ENTONCES**,  el sistema debe mostrar el tablero con el tamaño seleccionado. | Pendiente | 
+| | AC 1.2 | **CUANDO** el usuario no selecciona un tamaño de tablero, se debe utilizar el tamaño `3x3` de manera predeterminada. **ENTONCES**, si el usuario inicia una partida sin haber seleccionado un tamaño de tablero, el juego debe iniciarse en el tablero `3x3`. | Pendiente |
 | 2. Elige el modo de juego de un tablero elegido | AC 2.1 | **CUANDO** el jugador seleccione un modo de juego, **ENTONCES**, el sistema debe mostrar el tablero con el modo de juego seleccionado. | Pendiente |
 | | AC 2.2 | **CUANDO** el usuario no selecciona un modo de juego, se debe utilizar el modo `simple` de manera predeterminada. **ENTONCES**, si el usuario inicia una partida sin haber seleccionado un modo de juego, el juego debe iniciarse en el tablero seleccionado con el modo `simple`. | Pendiente |
 | 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos | AC 3.1 | **CUANDO** el jugador seleccione un tamaño de tablero y un modo de juego, **ENTONCES**, el sistema debe mostrar el tablero con el tamaño y modo de juego seleccionado. | Pendiente | 
