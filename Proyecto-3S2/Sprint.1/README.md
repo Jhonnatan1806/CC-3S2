@@ -12,7 +12,7 @@
 | 6 | Hacer un movimiento en un juego general | **Como** jugador del juego SOS, **quiero** poder hacer un movimiento en cualquier momento durante el juego **para** poder avanzar en el mismo y ganar. También **quiero** poder seleccionar la posición donde quiero hacer el movimiento y que el sistema lo valide y lo muestre en el tablero.    | Alta (1) | 4 |
 | 7 | Un juego general a terminado | **Como** jugador del juego SOS, **quiero** que se identifique el momento en el que el juego termina y muestre si gané o perdí, asi como también el modo de juego **para** salir del juego o empezar un nuevo ya sea general o simple. | Alta (4) | 5 |
 
-**Tabla de priodidades**
+**Tabla de prioridades**
 
 A continuación se muestra una tabla con las prioridades de las historias de usuario.
 
