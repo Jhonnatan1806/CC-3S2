@@ -14,13 +14,13 @@
 
 | Nombre e ID de historia de usuario | AC ID | Nombre Clase(s) | Nombre Método(s) | Estatus (completo o no) | Notas (opcional) |
 |---|---|---|---|---|---|
-| 1. Escoge el tamaño del tablero | 1.1 | Board | - getBoard - getRows - getColumns - getGameMode - setGameMode - putLetter | incompleto | En la imagen del resumen no se aprecia todos los métodos más en el código dentro de la carpeta sos si. |
-| 2. Escoge el modo de juego de un tablero escogido | | | | | |
-| 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos  | | | | | |
-| 4. Hacer un movimiento en un juego simple | | | | | |
-| 5. Un juego simple a terminado | | | | | |
-| 6. Hacer un movimiento en un juego general | | | | | |
-| 7. Un juego general a terminado | | | | | |
+| 1. Escoge el tamaño del tablero | 1.1 | Board | getBoard getRows getColumns | completo | - |
+| 2. Escoge el modo de juego de un tablero escogido | 2.1 | GameMode| getGameMode setGameMode | completo | - |
+| 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos  | 3.1 | Player GameMode Board Score |   | incompleto | - |
+| 4. Hacer un movimiento en un juego simple | 4.1 | Player Board | putLetter | completo | - |
+| 5. Un juego simple a terminado | 5.1 | Player Score | checkResult getScore | incompleto | - |
+| 6. Hacer un movimiento en un juego general | 6.1 | Player Board  | putLetter | completo | - |
+| 7. Un juego general a terminado | 7.1 | Player Board Score| checkResult getScore | incompleto | - |
 
 ## Pruebas vs Historias de Usuario/Criterio de Aceptación
 
@@ -28,13 +28,13 @@
 
 | Nombre e ID de historia de usuario | AC ID | Nombre Clase(s) del código de prueba | Nombre Método(s) del código de prueba | Descripción de los casos de prueba (entrada & salida esperada) |
 |---|---|---|---|---|
-| 1. Escoge el tamaño del tablero | | | | | 
-| 2. Escoge el modo de juego de un tablero escogido | | | | | 
-| 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos  | | | | | 
-| 4. Hacer un movimiento en un juego simple | | | | | 
-| 5. Un juego simple a terminado | | | | | 
-| 6. Hacer un movimiento en un juego general | | | | | 
-| 7. Un juego general a terminado | | | | |
+| 1. Escoge el tamaño del tablero | 1.1 | Board | expect(board.getRows()).toBe(rows) expect(board.getColumns()).toBe(columns)| completo | - |
+| 2. Escoge el modo de juego de un tablero escogido | 2.1 | GameMode| expect(board.getGameMode()).toBe(gameMode); | completo | - |
+| 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos  | 3.1 | Player GameMode Board Score |   | incompleto | - |
+| 4. Hacer un movimiento en un juego simple | 4.1 | Player Board | expect(boardState).toBe([1][1])  | completo | - |
+| 5. Un juego simple a terminado | 5.1 | Player Score | expect(gameState).toBe(finished) | incompleto | - |
+| 6. Hacer un movimiento en un juego general | 6.1 | Player Board  | expect(boardState).toBe([2][2]) | completo | - |
+| 7. Un juego general a terminado | 7.1 | Player Board Score| expect(gameState).toBe(finished)  | incompleto | - |
 
 **2. Pruebas manuales que corresponden directamente a los criterios de aceptación**
 
