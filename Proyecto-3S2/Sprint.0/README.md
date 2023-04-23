@@ -25,3 +25,5 @@ Test Division
 ![Test Resultado](Imagenes/divisionPass.png)
 
 **3.	Programación GUI**
+
+![GUI](Imagenes/GUI.png)
