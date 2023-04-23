@@ -4,9 +4,9 @@
 
 | Nombre del archivo o código fuente | ¿Código de producción o de prueba? | # Lineas de código |
 |---|---|---|
-| Board.ts | ![Archivo 1](Imagenes/Archivo1.png) | n |
-| Archivo 1 | ![Archivo 1](Imagenes/Archivo1.png) | n |
-| Archivo 1 | ![Archivo 1](Imagenes/Archivo1.png) | n |
+| Board.ts | ![Board](Imagenes/Board.png) | 24 |
+| GameMode.ts | ![GameMode](Imagenes/GameMode.png) | 16 |
+| Player.ts | ![Player](Imagenes/Player.png) | 15 |
 | Archivo 1 | ![Archivo 1](Imagenes/Archivo1.png) | n |
 | Archivo 1 | ![Archivo 1](Imagenes/Archivo1.png) | n |
 
