@@ -8,7 +8,7 @@
  * @see Board.setGameMode
  * @see Board.getGameMode
  * 
- * @author Jhonnnatan && Omar
+ * @author Jhonnatan && Omar
  */
 
 export enum GameMode {

@@ -2,22 +2,20 @@ import { Board } from './Board';
 
 /**
  * Representa un jugador del juego SOS.
- * @author Jhonnnatan && Omar
+ * @author Jhonnatan && Omar
  */
 export class Player {
 
   private readonly name: string;
-  private readonly board: Board;
+  private board: Board | undefined;
 
   /**
    * Crea un nuevo jugador con el nombre especificado.
    * 
    * @param name El nombre del jugador.
-   * @param board El tablero del juego.
    */
-  constructor (name: string, board: Board) {
+  constructor (name: string) {
     this.name = name;
-    this.board = board;
   }
 
   /**
@@ -30,15 +28,31 @@ export class Player {
   }
 
   /**
-   * Selecciona el modo de juego del tablero.
+   * Devuelve el tablero del jugador.
    * 
-   * @param mode El modo de juego del tablero.
+   * @returns El tablero del jugador.
+   * @throws Error si el tablero no ha sido inicializado.
+   * @see Player.setGameSettings
+   * @see Board
+   */
+  public getBoard(): Board {
+    if(!this.board) throw new Error("The game has not started yet.");
+    return this.board;
+  }
+
+  /**
+   * Selecciona el tamaño y el modo de juego del tablero.
+   * 
+   * @param rows El número de filas del tablero.
+   * @param columns El número de columnas del tablero.
+   * @param gameMode El modo de juego del tablero.
    * @returns El modo de juego del tablero.
    * @see Board.setGameMode
    */
-  public selectGameMode(mode: boolean): boolean {
-    this.board.setGameMode(mode);
-    return this.board.getGameMode();
+  public setGameSettings(rows: number, columns:number , gameMode: boolean): void {
+    if(this.board) throw new Error("The game has already started.");
+    this.board = new Board(rows, columns);
+    this.board.setGameMode(gameMode);
   }
 
 }

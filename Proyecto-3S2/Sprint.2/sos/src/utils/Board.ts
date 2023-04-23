@@ -1,6 +1,6 @@
 /**
  * Representa un tablero de juego.
- * @author Jhonnnatan && Omar
+ * @author Jhonnatan && Omar
  */
 export class Board {
 
