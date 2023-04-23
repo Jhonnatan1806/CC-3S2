@@ -1,9 +1,12 @@
-class Board {
+/**
+ * Representa un tablero de juego.
+ * @author Jhonnnatan && Omar
+ */
+export default class Board {
 
   private rows: number;
   private columns: number;
   private board: string[][];
-
 
   /**
    * Crea un nuevo tablero con el número de filas y columnas especificado.
