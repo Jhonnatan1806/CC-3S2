@@ -59,3 +59,5 @@
 | 5 | | | | | 
 | 6 | | | | | 
 | 7 | | | | |
+
+## Describe cómo la jerarquía de clases en tu diseño trata con los requisitos comunes y diferentes del juego simple y el juego general. 
