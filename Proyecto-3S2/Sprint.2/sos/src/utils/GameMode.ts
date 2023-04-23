@@ -10,7 +10,8 @@
  * 
  * @author Jhonnnatan && Omar
  */
-enum GameMode {
+
+export enum GameMode {
   SIMPLE_GAME ,
   GENERAL_GAME ,
 }

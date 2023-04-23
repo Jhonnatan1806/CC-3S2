@@ -1,4 +1,4 @@
-import Board from "../../utils/Board";
+import { Board } from "../../utils/Board";
 
 describe("Board", () => {
   describe("constructor", () => {

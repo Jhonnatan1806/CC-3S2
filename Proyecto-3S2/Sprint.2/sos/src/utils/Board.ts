@@ -2,7 +2,7 @@
  * Representa un tablero de juego.
  * @author Jhonnnatan && Omar
  */
-export default class Board {
+export class Board {
 
   private readonly rows: number;
   private readonly columns: number; 

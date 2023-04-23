@@ -1,10 +1,10 @@
-import Board from './Board';
+import { Board } from './Board';
 
 /**
  * Representa un jugador del juego SOS.
  * @author Jhonnnatan && Omar
  */
-export default class Player {
+export class Player {
 
   private readonly name: string;
   private readonly board: Board;
