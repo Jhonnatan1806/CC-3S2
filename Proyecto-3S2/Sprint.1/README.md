@@ -10,7 +10,7 @@
 | 4 | Hacer un movimiento en un juego simple | **Como** jugador **requiero** hacer un movimiento en el juego después de que el tablero y el modo de juego hayan sido configurados. Esta función me permitiría **hacer** una jugada en el tablero y actualizar el estado del juego en consecuencia. | Alta (1) | 3 |
 | 5 | Un juego simple  a terminado | **Como** jugador **quiero** que el sistema detecte el final del juego y muestre el resultado final **para** saber si he ganado o perdido. Además, **quiero** poder reiniciar el juego o salir del mismo **para** poder jugar de nuevo o salir del juego. | Alta (1) | 4 |
 | 6 | Hacer un movimiento en un juego general | **Como** jugador del juego SOS, **quiero** poder hacer un movimiento en cualquier momento durante el juego **para** poder avanzar en el mismo y ganar. También **quiero** poder seleccionar la posición donde quiero hacer el movimiento y que el sistema lo valide y lo muestre en el tablero.    | Alta (1) | 4 |
-| 7 | Un juego general a terminado | **Como** jugador del juego SOS, **quiero** que se identifique el momento en el que el juego termina y muestre si gané o perdí, asi como también el modo de juego **para** salir del juego o empezar un nuevo ya sea general o simple. | Alta (4) | 5 |
+| 7 | Un juego general a terminado | **Como** jugador del juego SOS, **quiero** que se identifique el momento en el que el juego termina y muestre si gané o perdí, asi como también el modo de juego **para** salir del juego o empezar un nuevo ya sea general o simple. | Baja (4) | 5 |
 
 **Tabla de prioridades**
 
@@ -28,7 +28,7 @@ A continuación se muestra una tabla con las prioridades de las historias de usu
 
 | Nombre e ID de la historia de usuario| AC ID | Descripción de los criterios de aceptación | Estatus |
 |---|---|---|---|
-| 1. Escoge el tamaño del tablero | AC 1.1 | **CUANDO** el jugador inicie el juego de SOS, se le debe permitir escoger el tamaño del tablero. **ENTONCES**, se debe mostrar una lista de opciones con diferentes tamaños de tablero. | Pendiente | 
+| 1. Escoge el tamaño del tablero | AC 1.1 | **CUANDO** el jugador inicie el juego de `SOS`, se le debe permitir escoger el tamaño del tablero. **ENTONCES**, se debe mostrar una lista de opciones con diferentes tamaños de tablero. | Pendiente | 
 | | AC 1.2 | **CUANDO** el jugador seleccione un tamaño de tablero, **ENTONCES**, el sistema debe mostrar el tablero con el tamaño seleccionado. | Pendiente | 
 | | AC 1.3 | **CUANDO** el usuario no selecciona un tamaño de tablero, se debe utilizar el tamaño `3x3` de manera predeterminada. **ENTONCES**, si el usuario inicia una partida sin haber seleccionado un tamaño de tablero, el juego debe iniciarse en el tablero `3x3`. | Pendiente |
 | 2. Elige el modo de juego de un tablero elegido | AC 2.1 | **CUANDO** el jugador seleccione un modo de juego, **ENTONCES**, el sistema debe mostrar el tablero con el modo de juego seleccionado. | Pendiente |
