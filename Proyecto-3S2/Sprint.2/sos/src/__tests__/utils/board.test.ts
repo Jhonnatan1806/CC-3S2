@@ -25,5 +25,23 @@ describe("Board", () => {
       // Verificamos que cada fila del tablero tenga el tamaño correcto
       board.getBoard().forEach(row => expect(row).toHaveLength(columns));
     });
+
+    /**
+      * AC 2.1
+      * CUANDO el jugador seleccione un modo de juego,
+      * ENTONCES, el sistema debe mostrar el tablero con el modo de juego seleccionado.
+    */
+    test("should create a board with the specified game mode", () => {
+      // Definimos el modo de juego para el tablero de prueba
+      const gameMode = false; // false == modo de juego general
+
+      // Creamos un nuevo tablero con el modo de juego especificado
+      const board = new Board(3, 3);
+      board.setGameMode(gameMode);
+
+      // Verificamos que el tablero tenga el modo de juego especificado
+      expect(board.getGameMode()).toBe(gameMode);
+    });
+
   });
 });
