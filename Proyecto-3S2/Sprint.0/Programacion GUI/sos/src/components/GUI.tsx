@@ -51,7 +51,7 @@ function PlayerMovement( {name}: Player ){
 export default function GUI() {
   return (
     <>
-      <main className="flex flex-col max-w-4xl w-full h-fit rounded-xl gap-4 p-4 m-auto bg-gray-200 ">
+      <main className="flex flex-col max-w-4xl w-full h-fit rounded-xl gap-4 p-4 m-auto bg-gray-200 mt-5">
         <div className="flex flex-col md:flex-row md:flex-wrap md:justify-between items-center gap-4">
           <Image 
             src='/images/logo.webp' 
