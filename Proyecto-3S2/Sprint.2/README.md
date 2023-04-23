@@ -4,7 +4,7 @@
 
 | Nombre del archivo o código fuente | ¿Código de producción o de prueba? | # Lineas de código |
 |---|---|---|
-| Archivo 1 | ![Archivo 1](Imagenes/Archivo1.png) | n |
+| Board.ts | ![Archivo 1](Imagenes/Archivo1.png) | n |
 | Archivo 1 | ![Archivo 1](Imagenes/Archivo1.png) | n |
 | Archivo 1 | ![Archivo 1](Imagenes/Archivo1.png) | n |
 | Archivo 1 | ![Archivo 1](Imagenes/Archivo1.png) | n |
