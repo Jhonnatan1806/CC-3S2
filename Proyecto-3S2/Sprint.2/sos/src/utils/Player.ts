@@ -10,7 +10,6 @@ export class Player {
 
   private readonly name: string;
 
-  private board: Board | undefined;
   private score: Score; 
 
   /**
@@ -29,19 +28,6 @@ export class Player {
    */
   public getName(): string {
     return this.name;
-  }
-
-  /**
-   * Devuelve el tablero del jugador.
-   * @returns {Board} El tablero del jugador.
-   * @throws {Error} Error si el tablero no ha sido inicializado.
-   * @see Board
-   */
-  public getBoard(): Board {
-    if (!this.board) {
-      throw new Error('The game has not started yet.');
-    }
-    return this.board;
   }
 
   /**
