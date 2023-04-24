@@ -1,28 +1,31 @@
 import { Board } from './Board';
+import { Score } from './Score';
 
 /**
  * @class Player
  * @classdesc Esta clase representa un jugador del juego SOS.
- * @version 1.0.1
- * @author Jhonnatan E.
- * @author Omar V.
+ * @version 1.0.2
  */
 export class Player {
 
   private readonly name: string;
+
   private board: Board | undefined;
+  private score: Score; 
 
   /**
    * Crea un nuevo jugador con el nombre especificado.
-   * @param name El nombre del jugador.
+   * @constructor
+   * @param {string} name El nombre del jugador.
    */
   constructor (name: string) {
     this.name = name;
+    this.score = new Score();
   }
 
   /**
    * Devuelve el nombre del jugador.
-   * @returns El nombre del jugador.
+   * @returns {string} El nombre del jugador.
    */
   public getName(): string {
     return this.name;
@@ -30,28 +33,38 @@ export class Player {
 
   /**
    * Devuelve el tablero del jugador.
-   * @returns El tablero del jugador.
-   * @throws Error si el tablero no ha sido inicializado.
-   * @see Player.setGameSettings
+   * @returns {Board} El tablero del jugador.
+   * @throws {Error} Error si el tablero no ha sido inicializado.
    * @see Board
    */
   public getBoard(): Board {
-    if(!this.board) throw new Error("The game has not started yet.");
+    if (!this.board) {
+      throw new Error('The game has not started yet.');
+    }
     return this.board;
   }
 
   /**
-   * Selecciona el tamaño y el modo de juego del tablero.
-   * @param rows El número de filas del tablero.
-   * @param columns El número de columnas del tablero.
-   * @param gameMode El modo de juego del tablero.
-   * @returns El modo de juego del tablero.
-   * @see Board.setGameMode
+   * Devuelve el puntaje actual del jugador.
+   * @returns {number} El puntaje del jugador.
    */
-  public setGameSettings(rows: number, columns:number , gameMode: boolean): void {
-    if(this.board) throw new Error("The game has already started.");
-    this.board = new Board(rows, columns);
-    this.board.setGameMode(gameMode);
+  public getScore(): number {
+    return this.score.getScore();
   }
 
+  /**
+   * Realiza un movimiento en el tablero en la celda especificada.
+   * @param {number} row - La fila de la celda.
+   * @param {number} col - La columna de la celda.
+   * @param {string} letter - La letra que se desea colocar en la celda.
+   * @returns {boolean} True si el movimiento fue exitoso, False si no lo fue.
+   */
+  public makeMove(board: Board, row: number, col: number, letter: string): boolean {
+    const currentValue = board.getCellValue(row, col);
+    if (currentValue !== "") {
+      return false; // La celda ya está ocupada
+    }
+    board.setCellValue(row, col, letter);
+    return true;
+  }
 }

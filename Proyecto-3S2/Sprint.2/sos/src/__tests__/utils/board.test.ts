@@ -13,17 +13,17 @@ describe("Board", () => {
       const columns = 4;
 
       // Creamos un nuevo tablero con las filas y columnas especificadas
-      const board = new Board(rows, columns);
+      const board = new Board(rows, columns, true);
 
       // Verificamos que el tablero tenga el número de filas y columnas especificado
       expect(board.getRows()).toBe(rows);
       expect(board.getColumns()).toBe(columns);
 
       // Verificamos que el tablero tenga el tamaño correcto
-      expect(board.getBoard()).toHaveLength(rows);
+      expect(board.getGrid()).toHaveLength(rows);
 
       // Verificamos que cada fila del tablero tenga el tamaño correcto
-      board.getBoard().forEach(row => expect(row).toHaveLength(columns));
+      board.getGrid().forEach(row => expect(row).toHaveLength(columns));
     });
 
     /**
@@ -36,8 +36,7 @@ describe("Board", () => {
       const gameMode = false; // false == modo de juego general
 
       // Creamos un nuevo tablero con el modo de juego especificado
-      const board = new Board(3, 3);
-      board.setGameMode(gameMode);
+      const board = new Board(3, 3, gameMode);
 
       // Verificamos que el tablero tenga el modo de juego especificado
       expect(board.getGameMode()).toBe(gameMode);
