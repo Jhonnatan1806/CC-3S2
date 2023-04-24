@@ -28,6 +28,7 @@ describe("Player", () => {
       expect(board.getGameMode()).toBe(gameMode);
     });
   });
+  
   describe("makeMove", () => {
     /**
      * AC 4.1
