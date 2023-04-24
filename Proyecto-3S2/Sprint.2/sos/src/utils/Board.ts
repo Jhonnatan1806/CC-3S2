@@ -1,6 +1,9 @@
 /**
- * Representa un tablero de juego.
- * @author Jhonnatan && Omar
+ * @class Board
+ * @classdesc Representa un tablero de juego.
+ * @version 1.0.2
+ * @author Jhonnatan E.
+ * @author Omar V.
  */
 export class Board {
 
@@ -11,7 +14,7 @@ export class Board {
 
   /**
    * Crea un nuevo tablero con el número de filas y columnas especificado.
-   * 
+   * @constructor
    * @param rows El número de filas del tablero.
    * @param columns El número de columnas del tablero.
    */
@@ -29,7 +32,6 @@ export class Board {
 
   /**
    * Devuelve una copia del tablero.
-   * 
    * @returns Una matriz bidimensional que representa el estado actual del tablero.
    */
   public getBoard(): string[][] {
@@ -38,7 +40,6 @@ export class Board {
 
   /**
    * Devuelve el número de filas del tablero.
-   * 
    * @returns El número de filas del tablero.
    */
   public getRows(): number {
@@ -47,7 +48,6 @@ export class Board {
 
   /**
    * Devuelve el número de columnas del tablero.
-   * 
    * @returns El número de columnas del tablero.
    */
   public getColumns(): number {
@@ -56,7 +56,6 @@ export class Board {
 
   /**
    * Devuelve el modo de juego del tablero.
-   * 
    * @returns El modo de juego del tablero que por defecto es "simple".
    * true = "simple" & false = "general"
    */
@@ -66,7 +65,6 @@ export class Board {
 
   /**
    * Selecciona el modo de juego.
-   * 
    * true = "simple" & false = "general"
    */
   public setGameMode(gameMode: boolean) {
@@ -75,7 +73,6 @@ export class Board {
 
   /**
    * Coloca una letra en la posición especificada del tablero.
-   * 
    * @param row La fila en la que se colocará la letra.
    * @param column La columna en la que se colocará la letra.
    * @param letter La letra que se colocará en la posición especificada.

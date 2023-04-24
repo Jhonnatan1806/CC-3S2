@@ -1,8 +1,11 @@
 import { Board } from './Board';
 
 /**
- * Representa un jugador del juego SOS.
- * @author Jhonnatan && Omar
+ * @class Player
+ * @classdesc Esta clase representa un jugador del juego SOS.
+ * @version 1.0.1
+ * @author Jhonnatan E.
+ * @author Omar V.
  */
 export class Player {
 
@@ -11,7 +14,6 @@ export class Player {
 
   /**
    * Crea un nuevo jugador con el nombre especificado.
-   * 
    * @param name El nombre del jugador.
    */
   constructor (name: string) {
@@ -20,7 +22,6 @@ export class Player {
 
   /**
    * Devuelve el nombre del jugador.
-   * 
    * @returns El nombre del jugador.
    */
   public getName(): string {
@@ -29,7 +30,6 @@ export class Player {
 
   /**
    * Devuelve el tablero del jugador.
-   * 
    * @returns El tablero del jugador.
    * @throws Error si el tablero no ha sido inicializado.
    * @see Player.setGameSettings
@@ -42,7 +42,6 @@ export class Player {
 
   /**
    * Selecciona el tamaño y el modo de juego del tablero.
-   * 
    * @param rows El número de filas del tablero.
    * @param columns El número de columnas del tablero.
    * @param gameMode El modo de juego del tablero.
