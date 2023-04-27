@@ -35,8 +35,8 @@
 | Nombre e ID de historia de usuario | AC ID | Entrada de caso de prueba | Salida esperada | Notas |
 |---|---|---|---|---|
 | 1. Escoge el tamaño del tablero | 1.1 | ![BoardSize](Imagenes/boardSize.png) | | | 
-| 2. Escoge el modo de juego de un tablero escogido | 2.1 | ![GameMode](Imagenes/gameMode.png) | | | 
-| 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos  | 3.1 | ![BaordAndGameMode](Imagenes/boardsize&gameode.png) | | | 
+| 2. Escoge el modo de juego de un tablero escogido | 2.1 | ![GameMode](Imagenes/gameode.png) | | | 
+| 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos  | 3.1 | ![BaordAndGameMode](Imagenes/boardsize&gameMode.png) | | | 
 | 4. Hacer un movimiento en un juego simple | 4.1 | ![MakeAmove](Imagenes/makeAmove.png) | | | 
 | 5. Un juego simple a terminado | 5.1 | ![Finished](Imagenes/gameFinished.png) | | | 
 
