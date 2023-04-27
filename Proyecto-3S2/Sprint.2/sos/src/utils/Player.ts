@@ -38,11 +38,8 @@ export class Player {
     return this.score.getScore();
   }
 
-<<<<<<< HEAD
-}
 
 
-=======
   /**
    * Realiza un movimiento en el tablero en la celda especificada.
    * @param {number} row - La fila de la celda.
@@ -59,4 +56,3 @@ export class Player {
     return true;
   }
 }
->>>>>>> 392f70eca30160e3617fd0d90eb1488b0df7bb00

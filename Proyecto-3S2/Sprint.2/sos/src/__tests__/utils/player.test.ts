@@ -68,6 +68,8 @@ describe("Player", () => {
       expect(moveResult).toBe(true);
       expect(board.getCellValue(0, 0)).toBe("S");
 
+      
+
       // Se cambia de turno
       game.setCurrentPlayer(player2);
 

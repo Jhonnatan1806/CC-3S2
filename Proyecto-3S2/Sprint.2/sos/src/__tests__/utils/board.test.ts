@@ -39,6 +39,7 @@ describe("Board", () => {
       const board = new Board(3, 3, gameMode);
 
       // Verificamos que el tablero tenga el modo de juego especificado
+      
       expect(board.getGameMode()).toBe(gameMode);
     });
 
