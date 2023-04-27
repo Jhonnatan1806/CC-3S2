@@ -19,8 +19,6 @@
 | 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos  | 3.1 | Player GameMode Board Score |   | incompleto | - |
 | 4. Hacer un movimiento en un juego simple | 4.1 | Player Board | putLetter | completo | - |
 | 5. Un juego simple a terminado | 5.1 | Player Score | checkResult getScore | incompleto | - |
-| 6. Hacer un movimiento en un juego general | 6.1 | Player Board  | putLetter | completo | - |
-| 7. Un juego general a terminado | 7.1 | Player Board Score| checkResult getScore | incompleto | - |
 
 ## Pruebas vs Historias de Usuario/Criterio de Aceptación
 
@@ -33,8 +31,6 @@
 | 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos  | 3.1 | Player GameMode Board Score |   | incompleto | - |
 | 4. Hacer un movimiento en un juego simple | 4.1 | Player Board | expect(boardState).toBe([1][1])  | completo | - |
 | 5. Un juego simple a terminado | 5.1 | Player Score | expect(gameState).toBe(finished) | incompleto | - |
-| 6. Hacer un movimiento en un juego general | 6.1 | Player Board  | expect(boardState).toBe([2][2]) | completo | - |
-| 7. Un juego general a terminado | 7.1 | Player Board Score| expect(gameState).toBe(finished)  | incompleto | - |
 
 **2. Pruebas manuales que corresponden directamente a los criterios de aceptación**
 
@@ -45,8 +41,6 @@
 | 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos  | | | | | 
 | 4. Hacer un movimiento en un juego simple | | | | | 
 | 5. Un juego simple a terminado | | | | | 
-| 6. Hacer un movimiento en un juego general | | | | | 
-| 7. Un juego general a terminado | | | | |
 
 **3. Otras pruebas automatizadas o manuales que no corresponden a los criterios de aceptación de las historias de usuario anteriores**
 
@@ -57,5 +51,3 @@
 | 3 | | | | | 
 | 4 | | | | | 
 | 5 | | | | | 
-| 6 | | | | | 
-| 7 | | | | |
