@@ -1,45 +1,44 @@
 /**
- * Representa un tablero de juego.
- * @author Jhonnnatan && Omar
+ * @class Board
+ * @classdesc Representa un tablero de juego.
+ * @version 1.0.3
  */
-export default class Board {
+export class Board {
 
   private readonly rows: number;
-  private readonly columns: number; 
-  private board: string[][]; 
-  private gameMode: boolean;
+  private readonly columns: number;
+  private readonly grid: string[][];
+  
+  private gameMode: boolean = true;
 
   /**
    * Crea un nuevo tablero con el número de filas y columnas especificado.
-   * 
-   * @param rows El número de filas del tablero.
-   * @param columns El número de columnas del tablero.
+   * @constructor
+   * @param {number} rows El número de filas del tablero.
+   * @param {number} columns El número de columnas del tablero.
+   * @param {boolean} gameMode El modo de juego del tablero.
    */
-  constructor(rows: number, columns: number) {
+  constructor(rows: number, columns: number, gameMode: boolean) {
     this.rows = rows;
     this.columns = columns;
-    this.board = [];
-    this.gameMode = true;
-
-    for (let i = 0; i < rows; i++) {
-      const fila = new Array(columns).fill("");
-      this.board.push(fila);
+    this.gameMode = gameMode;
+    this.grid = new Array(rows);
+    for(let i = 0; i < rows; i++) {
+      this.grid[i] = new Array(columns).fill("");
     }
   }
 
   /**
    * Devuelve una copia del tablero.
-   * 
-   * @returns Una matriz bidimensional que representa el estado actual del tablero.
+   * @returns {string[][]} Una matriz bidimensional que representa el estado actual del tablero.
    */
-  public getBoard(): string[][] {
-    return this.board;
+  public getGrid(): string[][] {
+    return this.grid;
   }
 
   /**
    * Devuelve el número de filas del tablero.
-   * 
-   * @returns El número de filas del tablero.
+   * @returns {number} El número de filas del tablero.
    */
   public getRows(): number {
     return this.rows;
@@ -47,8 +46,7 @@ export default class Board {
 
   /**
    * Devuelve el número de columnas del tablero.
-   * 
-   * @returns El número de columnas del tablero.
+   * @returns {number} El número de columnas del tablero.
    */
   public getColumns(): number {
     return this.columns;
@@ -56,37 +54,41 @@ export default class Board {
 
   /**
    * Devuelve el modo de juego del tablero.
-   * 
-   * @returns El modo de juego del tablero que por defecto es "simple".
-   * true = "simple" & false = "general"
+   * @returns {boolean} true = "simple" & false = "general"
    */
   public getGameMode(): boolean {
     return this.gameMode;
   }
 
   /**
-   * Selecciona el modo de juego.
-   * 
-   * true = "simple" & false = "general"
+   * Devuelve la letra en la celda especificada.
+   * @param {number} row La fila de la celda.
+   * @param {number} column La columna de la celda.
+   * @returns {string} La letra en la celda especificada, o una cadena vacía si la celda está vacía.
+   * @throws {Error} Error si la fila o columna especificada está fuera del rango del tablero.
    */
-  public setGameMode(gameMode: boolean) {
-    this.gameMode = gameMode;
-  }
+    public getCellValue(row: number, column: number): string {
+      if(row < 0 || row >= this.rows || column < 0 || column >= this.columns) {
+        throw new Error("Cell position out of bounds.");
+      }
+      return this.grid[row][column];
+    }
 
   /**
-   * Coloca una letra en la posición especificada del tablero.
-   * 
-   * @param row La fila en la que se colocará la letra.
-   * @param column La columna en la que se colocará la letra.
-   * @param letter La letra que se colocará en la posición especificada.
-   * @returns true si la letra se colocó exitosamente en la posición especificada, o false si la posición ya estaba ocupada.
+   * Establece la letra en la celda especificada.
+   * @param {number} row La fila de la celda.
+   * @param {number} column La columna de la celda.
+   * @param {string} value La letra a establecer en la celda.
+   * @throws {Error} Error si la fila o columna especificada está fuera del rango del tablero, o si la celda ya está ocupada.
    */
-  public putLetter(row: number, column: number, letter: string): boolean {
-    if (this.board[row][column] !== "") {
-      return false;
+  public setCellValue(row: number, column: number, value: string): void {
+    if(row < 0 || row >= this.rows || column < 0 || column >= this.columns) {
+      throw new Error("Cell position out of bounds.");
     }
-    this.board[row][column] = letter;
-    return true;
+    if(this.grid[row][column] !== "") {
+      throw new Error("Cell already occupied.");
+    }
+    this.grid[row][column] = value;
   }
 
 }

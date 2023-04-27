@@ -1,46 +1,62 @@
-import Board from './Board';
+import { Board } from './Board';
+import { Score } from './Score';
 
 /**
- * Representa un jugador del juego SOS.
- * @author Jhonnnatan && Omar
+ * @class Player
+ * @classdesc Esta clase representa un jugador del juego SOS.
+ * @version 1.0.2
  */
-export default class Player {
+export class Player {
 
   private readonly name: string;
-  private readonly board: Board;
+
+  private score: Score; 
 
   /**
    * Crea un nuevo jugador con el nombre especificado.
-   * 
-   * @param name El nombre del jugador.
-   * @param board El tablero del juego.
+   * @constructor
+   * @param {string} name El nombre del jugador.
    */
-  constructor (name: string, board: Board) {
+  constructor (name: string) {
     this.name = name;
-    this.board = board;
+    this.score = new Score();
   }
 
   /**
    * Devuelve el nombre del jugador.
-   * 
-   * @returns El nombre del jugador.
+   * @returns {string} El nombre del jugador.
    */
   public getName(): string {
     return this.name;
   }
 
   /**
-   * Selecciona el modo de juego del tablero.
-   * 
-   * @param mode El modo de juego del tablero.
-   * @returns El modo de juego del tablero.
-   * @see Board.setGameMode
+   * Devuelve el puntaje actual del jugador.
+   * @returns {number} El puntaje del jugador.
    */
-  public selectGameMode(mode: boolean): boolean {
-    this.board.setGameMode(mode);
-    return this.board.getGameMode();
+  public getScore(): number {
+    return this.score.getScore();
   }
 
+<<<<<<< HEAD
 }
 
 
+=======
+  /**
+   * Realiza un movimiento en el tablero en la celda especificada.
+   * @param {number} row - La fila de la celda.
+   * @param {number} col - La columna de la celda.
+   * @param {string} letter - La letra que se desea colocar en la celda.
+   * @returns {boolean} True si el movimiento fue exitoso, False si no lo fue.
+   */
+  public makeMove(board: Board, row: number, col: number, letter: string): boolean {
+    const currentValue = board.getCellValue(row, col);
+    if (currentValue !== "") {
+      return false; // La celda ya está ocupada
+    }
+    board.setCellValue(row, col, letter);
+    return true;
+  }
+}
+>>>>>>> 392f70eca30160e3617fd0d90eb1488b0df7bb00
