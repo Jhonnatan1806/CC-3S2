@@ -10,7 +10,10 @@
  * 
  * @author Jhonnnatan && Omar
  */
+
 enum GameMode {
   SIMPLE_GAME ,
   GENERAL_GAME ,
 }
+
+
