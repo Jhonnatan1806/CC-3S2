@@ -19,8 +19,6 @@
 | 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos  | | | | | |
 | 4. Hacer un movimiento en un juego simple | | | | | |
 | 5. Un juego simple a terminado | | | | | |
-| 6. Hacer un movimiento en un juego general | | | | | |
-| 7. Un juego general a terminado | | | | | |
 
 ## Pruebas vs Historias de Usuario/Criterio de Aceptación
 
@@ -33,8 +31,6 @@
 | 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos  | | | | | 
 | 4. Hacer un movimiento en un juego simple | | | | | 
 | 5. Un juego simple a terminado | | | | | 
-| 6. Hacer un movimiento en un juego general | | | | | 
-| 7. Un juego general a terminado | | | | |
 
 **2. Pruebas manuales que corresponden directamente a los criterios de aceptación**
 
@@ -45,8 +41,6 @@
 | 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos  | | | | | 
 | 4. Hacer un movimiento en un juego simple | | | | | 
 | 5. Un juego simple a terminado | | | | | 
-| 6. Hacer un movimiento en un juego general | | | | | 
-| 7. Un juego general a terminado | | | | |
 
 **3. Otras pruebas automatizadas o manuales que no corresponden a los criterios de aceptación de las historias de usuario anteriores**
 
@@ -57,7 +51,5 @@
 | 3 | | | | | 
 | 4 | | | | | 
 | 5 | | | | | 
-| 6 | | | | | 
-| 7 | | | | |
 
 ## Describe cómo la jerarquía de clases en tu diseño trata con los requisitos comunes y diferentes del juego simple y el juego general. 
