@@ -1,55 +1,41 @@
 # Sprint 3
 
-## Resumen del código fuente
+## Resumen
 
-| Nombre del archivo o código fuente | ¿Código de producción o de prueba? | # Lineas de código |
-|---|---|---|
-| Archivo 1 | ![Archivo 1](Imagenes/Archivo1.png) | n |
-| Archivo 1 | ![Archivo 1](Imagenes/Archivo1.png) | n |
-| Archivo 1 | ![Archivo 1](Imagenes/Archivo1.png) | n |
-| Archivo 1 | ![Archivo 1](Imagenes/Archivo1.png) | n |
-| Archivo 1 | ![Archivo 1](Imagenes/Archivo1.png) | n |
+En este sprint se implementó los criterios de aceptacion AC 5.1, AC 5.2 AC 6.1, AC 6.2, AC 7.1 y AC 7.2. Ademas se refactorizo el codigo para que sea mas legible y se agregaron comentarios para que sea mas facil de entender.
 
-## Código de producción vs Historias de Usuario/Criterio de Aceptación
+## Refactorización
 
-| Nombre e ID de historia de usuario | AC ID | Nombre Clase(s) | Nombre Método(s) | Estatus (completo o no) | Notas (opcional) |
-|---|---|---|---|---|---|
-| 1. Escoge el tamaño del tablero | | | | | |
-| 2. Escoge el modo de juego de un tablero escogido | | | | | |
-| 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos  | | | | | |
-| 4. Hacer un movimiento en un juego simple | | | | | |
-| 5. Un juego simple a terminado | | | | | |
+Se creo la clase enum GameMode, la cual contiene los modos de juego que puede tener ademas esta funcionalidad la sacamos del Board y la asignamos directamente a la clase Game. De este modo es mas legible y entendible el codigo.
 
-## Pruebas vs Historias de Usuario/Criterio de Aceptación
+```typescript 
+export enum GameMode {
+  SIMPLE_GAME ,
+  GENERAL_GAME ,
+}
+```
 
-**1. Pruebas automatizadas que corresponden directamente a los criterios de aceptación**
+Se crearon getters y setters para los atributos de la clase Game, de este modo se puede acceder a los atributos de la clase Game desde otras clases.
 
-| Nombre e ID de historia de usuario | AC ID | Nombre Clase(s) del código de prueba | Nombre Método(s) del código de prueba | Descripción de los casos de prueba (entrada & salida esperada) |
-|---|---|---|---|---|
-| 1. Escoge el tamaño del tablero | | | | | 
-| 2. Escoge el modo de juego de un tablero escogido | | | | | 
-| 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos  | | | | | 
-| 4. Hacer un movimiento en un juego simple | | | | | 
-| 5. Un juego simple a terminado | | | | | 
+```typescript
+public setGameMode(gameMode: GameMode): void {
+    this.gameMode = gameMode;
+}
 
-**2. Pruebas manuales que corresponden directamente a los criterios de aceptación**
+public getGameMode(): GameMode {
+  return this.gameMode;
+}
 
-| Nombre e ID de historia de usuario | AC ID | Entrada de caso de prueba | Salida esperada | Notas |
-|---|---|---|---|---|
-| 1. Escoge el tamaño del tablero | | | | | 
-| 2. Escoge el modo de juego de un tablero escogido | | | | | 
-| 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos  | | | | | 
-| 4. Hacer un movimiento en un juego simple | | | | | 
-| 5. Un juego simple a terminado | | | | | 
+public setBoard(board: Board): void {
+  this.board = board;
+}
 
-**3. Otras pruebas automatizadas o manuales que no corresponden a los criterios de aceptación de las historias de usuario anteriores**
+public getBoard(): Board {
+  return this.board;
+}
+```
 
-| Número | Entrada prueba | Resultado Esperado | Nombre de clase del código de prueba | Nombre del método del código de prueba |
-|---|---|---|---|---|
-| 1 | | | | | 
-| 2 | | | | | 
-| 3 | | | | | 
-| 4 | | | | | 
-| 5 | | | | | 
+Luego modificamos los tests para que se adapten a los cambios realizados, finalmente verificamos que pasa todos los test antes de hacer el commit.
 
-## Describe cómo la jerarquía de clases en tu diseño trata con los requisitos comunes y diferentes del juego simple y el juego general. 
+
+
