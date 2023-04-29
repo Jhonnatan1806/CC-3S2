@@ -4,7 +4,7 @@ import { Player } from "./Player";
 /**
  * @class Game
  * @classdesc Clase para representar un juego de SOS.
- * @version 1.0.0
+ * @version 1.0.1
  */
 export class Game {
 
@@ -17,13 +17,13 @@ export class Game {
   /**
    * Crea una instancia de Game.
    * @constructor
-   * @param {string} player1 El nombre del jugador 1.
-   * @param {string} player2 El nombre del jugador 2.
+   * @param {Player} player1 El jugador 1.
+   * @param {Player} player2 El jugador 2.
    * @param {number} rows El número de filas del tablero.
    * @param {number} columns El número de columnas del tablero.
    * @param {boolean} gameMode El modo de juego. `true` para el modo de juego por tiempo, `false` para el modo de juego general.
    */
-  constructor(player1: Player, player2: Player, rows: number, columns: number, gameMode: boolean) {
+  constructor (player1: Player, player2: Player, rows: number, columns: number, gameMode: boolean) {
     this.player1 = player1;
     this.player2 = player2;
     this.board = new Board(rows, columns, gameMode);
@@ -38,6 +38,11 @@ export class Game {
     return this.board;
   }
 
+  /**
+   * Devuelve los jugadores del juego.
+   * @returns {Player[]} Los jugadores del juego.
+   * @throws {Error} Si no hay jugadores.
+  */
   public getPlayers(): Player[] {
     return [this.player1, this.player2];
   }
@@ -52,6 +57,7 @@ export class Game {
 
   /**
    * Cambia de turno al jugador actual.
+   * @returns {void}
    */
   public setCurrentPlayer(player: Player): void {
     this.currentPlayer = player;
