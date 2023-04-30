@@ -19,7 +19,7 @@ Se crearon getters y setters para los atributos de la clase Game, de este modo s
 
 ```typescript
 public setGameMode(gameMode: GameMode): void {
-    this.gameMode = gameMode;
+  this.gameMode = gameMode;
 }
 
 public getGameMode(): GameMode {
