@@ -81,4 +81,61 @@ export class Board {
     this.grid[row][column] = value;
   }
 
+  /**
+   * Devuelve el número de celdas vacías en el tablero.
+   * @returns {number} El número de celdas vacías en el tablero.
+   */
+  public getEmptyCells(): number {
+    let emptyCells: number = 0;
+    for(let i = 0; i < this.rows; i++) {
+      for(let j = 0; j < this.columns; j++) {
+        if(this.grid[i][j] === "") {
+          emptyCells++;
+        }
+      }
+    }
+    return emptyCells;
+  }
+
+  /**
+   * Revise si se ha formado una cadena SOS en el tablero.
+   * @param {number} row La fila de la celda.
+   * @param {number} column La columna de la celda.
+   * @param {string} value La letra a establecer en la celda.
+   * @returns {boolean}
+   */
+  public checkSOS(row: number, column: number, value: string): boolean {
+    if(row < 0 || row >= this.rows || column < 0 || column >= this.columns) {
+      throw new Error("Cell position out of bounds.");
+    }
+    if(this.grid[row][column] !== "") {
+      throw new Error("Cell already occupied.");
+    }
+    let sos: boolean = false;
+    if(this.gameMode) {
+      sos = this.checkSOSClassic(row, column, value);
+    } else {
+      sos = this.checkSOSAdvanced(row, column, value);
+    }
+    return sos;
+  }
+
+  public checkSOSClassic (row: number, column: number, value: string): boolean {
+    //Verificar si se forma un SOS horizontal row = 1
+    let isSOS: boolean = false;
+    for( let i = 0; i < this.columns; i++) {
+      let letterRow: string = `${this.grid[i][0]}${this.grid[i][1]}${this.grid[i][2]}`;
+      if(letterRow === "SOS") {
+        isSOS = true;
+      }
+    }
+    return isSOS;
+  }
+
+  public checkSOSAdvanced (row: number, column: number, value: string): boolean {
+    //sos = [false, false, false] -> sos = [S, O, S]
+    let sos: boolean[] = [false, false, false];
+    return false;
+  }
+  
 }

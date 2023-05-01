@@ -1,10 +1,11 @@
 import { Board } from './Board';
+import { GameMode } from './GameMode';
 import { Score } from './Score';
 
 /**
  * @class Player
  * @classdesc Esta clase representa un jugador del juego SOS.
- * @version 1.0.2
+ * @version 1.0.3
  */
 export class Player {
 
@@ -45,12 +46,15 @@ export class Player {
    * @param {string} letter - La letra que se desea colocar en la celda.
    * @returns {boolean} True si el movimiento fue exitoso, False si no lo fue.
    */
-  public makeMove(board: Board, row: number, col: number, letter: string): boolean {
+  public makeMove(board: Board, row: number, col: number, letter: string, gameMode: GameMode): boolean {
     const currentValue = board.getCellValue(row, col);
     if (currentValue !== "") {
       return false; // La celda ya está ocupada
     }
     board.setCellValue(row, col, letter);
+    if (board.checkSOS(row, col, letter)) {
+      this.score.setScore(1);
+    }
     return true;
   }
 }

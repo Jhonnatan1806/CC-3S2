@@ -1,7 +1,7 @@
 /**
  * @class Score
  * @classdesc Esta clase se encarga de manejar el puntaje del juego.
- * @version 1.0.0
+ * @version 1.0.1
  */
 export class Score {
   
@@ -13,6 +13,27 @@ export class Score {
    */
   constructor() {
     this.score = 0;
+  }
+
+  /**
+   * Cambia el puntaje actual.
+   * @param {number} points El nuevo puntaje.
+   * @returns {void}
+   */
+  public setScore(points: number): void {
+    if (points < 0) {
+      throw new Error('Points cannot be negative.');
+    }
+    if (typeof points !== 'number') {
+      throw new Error('Points must be a number.');
+    }
+    if (!Number.isInteger(points)) {
+      throw new Error('Points must be an integer.');
+    }
+    if (points === 0) {
+      throw new Error('Points cannot be zero.');
+    }
+    this.score = points;
   }
 
   /**

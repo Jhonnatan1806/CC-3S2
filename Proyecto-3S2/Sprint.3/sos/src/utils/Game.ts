@@ -94,6 +94,16 @@ export class Game {
     return this.players;
   }
 
+  public makeMove(row: number, column: number, letter: string): void {
+    if (this.board == null) {
+      throw new Error("No hay tablero.");
+    }
+    if (this.currentPlayer == null) {
+      throw new Error("No hay jugador actual.");
+    }
+    this.currentPlayer.makeMove(this.board, row, column, letter);
+  }
+
   /**
    * Devuelve el jugador actual.
    * @returns {Player} El jugador actual.
@@ -112,6 +122,40 @@ export class Game {
    */
   public setCurrentPlayer(player: Player): void {
     this.currentPlayer = player;
+  }
+
+  /** 
+   * Devuelve el jugador ganador.
+   * @returns {Player} El jugador ganador.
+   * @throws {Error} Si no hay ganador.
+   * @throws {Error} Si hay empate.
+   * @throws {Error} Si el juego no ha terminado.
+   * @throws {Error} Si el juego no tiene jugadores.
+   * @throws {Error} Si el juego no tiene tablero.
+   * @throws {Error} Si el juego no tiene modo de juego.
+   */
+  public getWinner(): Player {
+    if(this.players.length == 0) {
+      throw new Error("No hay jugadores.");
+    }
+    if(this.board == null) {
+      throw new Error("No hay tablero.");
+    }
+    if(this.gameMode == null) {
+      throw new Error("No hay modo de juego.");
+    }
+    if(this.board.getEmptyCells() != 0) {
+      throw new Error("El juego no ha terminado.");
+    }
+    let player1Score = this.players[0].getScore();
+    let player2Score = this.players[1].getScore();
+    if(player1Score == player2Score) {
+      throw new Error("Hay empate.");
+    }
+    if(player1Score > player2Score) {
+      return this.players[0];
+    }
+    return this.players[1];
   }
 
 }
