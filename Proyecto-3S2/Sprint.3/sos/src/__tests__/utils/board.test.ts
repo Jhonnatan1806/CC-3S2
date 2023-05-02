@@ -33,18 +33,23 @@ describe("Board", () => {
      * ENTONCES, si el usuario inicia una partida sin haber seleccionado un tamaño de tablero, el juego debe iniciarse en el tablero 3x3.
      */
     test("should create a board with the default number of rows and columns", () => {
+      // Definimos el modo de juego para el tablero de prueba
+      const rows = 3;
+      const columns = 3;
+      const mode = Mode.GENERAL_GAME;
+
       // Creamos un nuevo tablero sin especificar el número de filas y columnas
-      const board = new Board(undefined, undefined, Mode.SIMPLE_GAME);
+      const board = new Board(undefined, undefined, mode);
 
       // Verificamos que el tablero tenga el número de filas y columnas predeterminado
-      expect(board.getRows()).toBe(3);
-      expect(board.getColumns()).toBe(3);
+      expect(board.getRows()).toBe(rows);
+      expect(board.getColumns()).toBe(columns);
 
       // Verificamos que el tablero tenga el tamaño correcto
-      expect(board.getGrid()).toHaveLength(3);
+      expect(board.getGrid()).toHaveLength(rows);
 
       // Verificamos que cada fila del tablero tenga el tamaño correcto
-      board.getGrid().forEach(row => expect(row).toHaveLength(3));
+      board.getGrid().forEach(row => expect(row).toHaveLength(columns));
     });
 
   });
