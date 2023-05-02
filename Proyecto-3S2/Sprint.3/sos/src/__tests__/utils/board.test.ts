@@ -49,7 +49,7 @@ describe("Board", () => {
 
   });
 
-  describe("getMode", () => {
+  describe("board mode", () => {
     /**
      * AC 2.1
      * CUANDO el jugador seleccione un modo de juego,
@@ -65,6 +65,24 @@ describe("Board", () => {
       const board = new Board(rows, columns, mode);
 
       // Verificamos que el tablero tenga el modo de juego especificado
+      expect(board.getMode()).toBe(mode);
+    });
+
+    /**
+     * AC 2.2 
+     * CUANDO el usuario no selecciona un modo de juego, se debe utilizar el modo simple de manera predeterminada.
+     * ENTONCES, si el usuario inicia una partida sin haber seleccionado un modo de juego, el juego debe iniciarse en el tablero seleccionado con el modo simple.
+     */
+    test("should create a board with the default game mode", () => {
+      // Definimos el modo de juego para el tablero de prueba
+      const rows = 3;
+      const columns = 3;
+      const mode = Mode.SIMPLE_GAME;
+
+      // Creamos un nuevo tablero con las filas y columnas especificadas sin un modo de juego
+      const board = new Board(rows, columns, undefined);
+
+      // Verificamos que el tablero tenga el modo de juego predeterminado
       expect(board.getMode()).toBe(mode);
     });
   });
