@@ -47,42 +47,42 @@ export class Board {
     return this.grid[row][column];
   }
 
-  public checkSOS(player: Player): boolean {
+  public checkSOS(): number {
     if (this.mode === Mode.GENERAL_GAME) {
-      return false;
+      return this.checkGeneral();
     }
-    return this.checkSOSClassic(player);
+    return this.checkSimple();
   }
 
-  public checkSOSClassic(player: Player): boolean {
+  public checkSimple(): number {
     // Verificar si se forma SOS en la fila
     for (let i = 0; i < this.columns; i++) {
       let letterRow: string = `${this.grid[i][0]}${this.grid[i][1]}${this.grid[i][2]}`;
       if (letterRow === "SOS") {
-        return true;
+        return 1;
       }
     }
     // Verificar si se forma SOS en la columna
     for (let i = 0; i < this.rows; i++) {
       let letterColumn: string = `${this.grid[0][i]}${this.grid[1][i]}${this.grid[2][i]}`;
       if (letterColumn === "SOS") {
-        return true;
+        return 1;
       }
     }
     // Verificar si se forma SOS en la diagonal principal
     let letterDiagonal: string = `${this.grid[0][0]}${this.grid[1][1]}${this.grid[2][2]}`;
     if (letterDiagonal === "SOS") {
-      return true;
+      return 1;
     }
     // Verificar si se forma SOS en la diagonal secundaria
     letterDiagonal = `${this.grid[0][2]}${this.grid[1][1]}${this.grid[2][0]}`;
     if (letterDiagonal === "SOS") {
-      return true;
+      return 1;
     }
-    return false;
+    return 0;
   }
 
-  public checkSOSAdvanced(player: Player): boolean {
-    return false;
+  public checkGeneral(): number {
+    return 0;
   }
 }

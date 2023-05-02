@@ -35,9 +35,8 @@ export class Player {
       return false;
     }
     this.board.setCell(row, col, letter);
-    if (this.board.checkSOS(this)) {
-      this.score.setScore(1);
-    }
+    let points = this.board.checkSOS();
+    this.score.addScore(points);
     return true;
   }
 }

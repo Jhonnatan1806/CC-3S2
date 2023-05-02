@@ -46,7 +46,7 @@ export class Game {
   }
 
   public playMove(row: number, column: number, letter: string): void {
-    this.currentPlayer.makeMove(this.board, row, column, letter);
+    this.currentPlayer.makeMove( row, column, letter);
   }
 
   public getWinner(): Player {
