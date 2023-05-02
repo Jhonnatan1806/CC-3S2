@@ -21,22 +21,19 @@ describe("Game", () => {
     game = new Game(board, players);
   });
 
-  describe("setGameMode",() => {
+  describe("constructor", () => {
     /**
-     * AC 2.1
-     * CUANDO el jugador seleccione un modo de juego,
-     * ENTONCES, el sistema debe mostrar el tablero con el modo de juego seleccionado.
+     * AC 3.1
+     * CUANDO el jugador seleccione un tamaño de tablero y un modo de juego,
+     * ENTONCES, el sistema debe mostrar el tablero con el tamaño y modo de juego seleccionado.
      */
-    test("should create a board with the specified game mode", () => {
-      
-      // Verificamos que el tablero tenga el numero de filas especificado
+    test("should create a board with the specified size and game mode", () => {
+      // Verificamos que el tablero tenga el tamaño y modo de juego especificados
       expect(game.getBoard().getRows()).toBe(rows);
-
-      // Verificamos que el tablero tenga el numero de columnas especificado
       expect(game.getBoard().getColumns()).toBe(columns);
+      expect(board.getMode()).toBe(mode);
 
-      // Verificamos que el tablero tenga el modo de juego especificado
-      expect(game.getBoard().getMode()).toBe(mode);
+
     });
   });
 });

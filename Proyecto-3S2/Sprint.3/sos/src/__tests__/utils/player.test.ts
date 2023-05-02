@@ -21,20 +21,6 @@ describe("Player", () => {
     game = new Game(board, players);
   });
 
-  describe("selectGameSettings", () => {
-    /**
-     * AC 3.1
-     * CUANDO el jugador seleccione un tamaño de tablero y un modo de juego,
-     * ENTONCES, el sistema debe mostrar el tablero con el tamaño y modo de juego seleccionado.
-     */
-    test("should create a board with the specified size and game mode", () => {
-      // Verificamos que el tablero tenga el tamaño y modo de juego especificados
-      expect(game.getBoard().getRows()).toBe(rows);
-      expect(game.getBoard().getColumns()).toBe(columns);
-      expect(board.getMode()).toBe(mode);
-    });
-  });
-  
   describe("makeMove", () => {
     /**
      * AC 4.1
@@ -54,6 +40,6 @@ describe("Player", () => {
       expect(game.getCurrentPlayer()).toBe(game.getPlayers()[0]);
 
     });
-
   });
+
 });

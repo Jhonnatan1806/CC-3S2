@@ -12,13 +12,13 @@ export class Board {
   private readonly grid: string[][];
   private readonly mode: Mode;
 
-  constructor(rows: number, columns: number, mode: Mode) {
-    this.rows = rows;
-    this.columns = columns;
-    this.mode = mode;
-    this.grid = new Array(rows);
-    for (let i = 0; i < rows; i++) {
-      this.grid[i] = new Array(columns).fill("");
+  constructor(rows?: number, columns?: number, mode?: Mode) {
+    this.rows = rows !== undefined ? rows : 3;
+    this.columns = columns !== undefined ? columns : 3;
+    this.mode = mode !== undefined ? mode : Mode.SIMPLE_GAME;
+    this.grid = new Array(this.rows);
+    for (let i = 0; i < this.rows; i++) {
+      this.grid[i] = new Array(this.columns).fill("");
     }
   }
 

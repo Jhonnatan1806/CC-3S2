@@ -2,7 +2,7 @@ import { Board } from "../../utils/Board";
 import { Mode } from "../../utils/Mode";
 
 describe("Board", () => {
-  describe("constructor", () => {
+  describe("board size", () => {
     /**
      * AC 1.1
      * CUANDO el jugador inicie el juego de SOS, se le debe permitir escoger el tamaño del tablero.
@@ -27,6 +27,29 @@ describe("Board", () => {
       board.getGrid().forEach(row => expect(row).toHaveLength(columns));
     });
 
+    /**
+     * AC 1.2
+     * CUANDO el usuario no selecciona un tamaño de tablero, se debe utilizar el tamaño 3x3 de manera predeterminada.
+     * ENTONCES, si el usuario inicia una partida sin haber seleccionado un tamaño de tablero, el juego debe iniciarse en el tablero 3x3.
+     */
+    test("should create a board with the default number of rows and columns", () => {
+      // Creamos un nuevo tablero sin especificar el número de filas y columnas
+      const board = new Board(undefined, undefined, Mode.SIMPLE_GAME);
+
+      // Verificamos que el tablero tenga el número de filas y columnas predeterminado
+      expect(board.getRows()).toBe(3);
+      expect(board.getColumns()).toBe(3);
+
+      // Verificamos que el tablero tenga el tamaño correcto
+      expect(board.getGrid()).toHaveLength(3);
+
+      // Verificamos que cada fila del tablero tenga el tamaño correcto
+      board.getGrid().forEach(row => expect(row).toHaveLength(3));
+    });
+
+  });
+
+  describe("getMode", () => {
     /**
      * AC 2.1
      * CUANDO el jugador seleccione un modo de juego,
