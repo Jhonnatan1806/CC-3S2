@@ -1,19 +1,19 @@
 import { Board } from "./Board";
-import { GameMode } from "./Mode";
 import { Score } from "./Score";
 
 /**
  * @class Player
  * @classdesc Esta clase representa un jugador del juego SOS.
- * @version 1.0.3
+ * @version 1.0.4
  */
 export class Player {
   private readonly name: string;
+  private readonly board: Board;
+  private readonly score: Score;
 
-  private score: Score;
-
-  constructor(name: string) {
+  constructor(name: string, board: Board) {
     this.name = name;
+    this.board = board;
     this.score = new Score();
   }
 
@@ -21,22 +21,21 @@ export class Player {
     return this.name;
   }
 
+  public getBoard(): Board {
+    return this.board;
+  }
+
   public getScore(): number {
     return this.score.getScore();
   }
 
-  public makeMove(
-    board: Board,
-    row: number,
-    col: number,
-    letter: string
-  ): boolean {
-    const currentValue = board.getCellValue(row, col);
+  public makeMove(row: number, col: number, letter: string): boolean {
+    const currentValue = this.board.getCell(row, col);
     if (currentValue !== "") {
-      return false; // La celda ya está ocupada
+      return false;
     }
-    board.setCellValue(row, col, letter);
-    if (board.checkSOS(row, col, letter)) {
+    this.board.setCell(row, col, letter);
+    if (this.board.checkSOS(this)) {
       this.score.setScore(1);
     }
     return true;

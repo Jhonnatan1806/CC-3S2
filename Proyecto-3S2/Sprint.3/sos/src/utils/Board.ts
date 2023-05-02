@@ -1,4 +1,5 @@
 import { Mode } from "./Mode";
+import { Player } from "./Player";
 
 /**
  * @class Board
@@ -46,14 +47,14 @@ export class Board {
     return this.grid[row][column];
   }
 
-  public checkSOS(row: number, column: number, value: string): boolean {
+  public checkSOS(player: Player): boolean {
     if (this.mode === Mode.GENERAL_GAME) {
-      return this.checkSOSAdvanced(row, column, value);
+      return false;
     }
-    return this.checkSOSClassic();
+    return this.checkSOSClassic(player);
   }
 
-  public checkSOSClassic(): boolean {
+  public checkSOSClassic(player: Player): boolean {
     // Verificar si se forma SOS en la fila
     for (let i = 0; i < this.columns; i++) {
       let letterRow: string = `${this.grid[i][0]}${this.grid[i][1]}${this.grid[i][2]}`;
@@ -61,7 +62,6 @@ export class Board {
         return true;
       }
     }
-
     // Verificar si se forma SOS en la columna
     for (let i = 0; i < this.rows; i++) {
       let letterColumn: string = `${this.grid[0][i]}${this.grid[1][i]}${this.grid[2][i]}`;
@@ -69,13 +69,11 @@ export class Board {
         return true;
       }
     }
-
     // Verificar si se forma SOS en la diagonal principal
     let letterDiagonal: string = `${this.grid[0][0]}${this.grid[1][1]}${this.grid[2][2]}`;
     if (letterDiagonal === "SOS") {
       return true;
     }
-
     // Verificar si se forma SOS en la diagonal secundaria
     letterDiagonal = `${this.grid[0][2]}${this.grid[1][1]}${this.grid[2][0]}`;
     if (letterDiagonal === "SOS") {
@@ -84,7 +82,7 @@ export class Board {
     return false;
   }
 
-  public checkSOSAdvanced(row: number, column: number, value: string): boolean {
+  public checkSOSAdvanced(player: Player): boolean {
     return false;
   }
 }
