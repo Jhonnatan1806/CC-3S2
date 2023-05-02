@@ -5,7 +5,7 @@ import { Player } from "./Player";
 /**
  * @class Game
  * @classdesc Clase para representar un juego de SOS.
- * @version 1.0.2
+ * @version 1.0.3
  */
 export class Game {
 
@@ -23,14 +23,14 @@ export class Game {
 
   public getBoard(): Board {
     if (this.board == null) {
-      throw new Error("No hay tablero.");
+      throw new Error("No board.");
     }
     return this.board;
   }
 
   public getPlayers(): Player[] {
     if (this.players.length == 0) {
-      throw new Error("No hay jugadores.");
+      throw new Error("No players.");
     }
     return this.players;
   }
@@ -41,7 +41,7 @@ export class Game {
 
   public getCurrentPlayer(): Player {
     if (this.currentPlayer == null) {
-      throw new Error("No hay jugador actual.");
+      throw new Error("No current player found.");
     }
     return this.currentPlayer;
   }
@@ -52,7 +52,7 @@ export class Game {
 
   public getWinner(): Player {
     if (this.players[0].getScore() === this.players[1].getScore()) {
-      throw new Error("Hay empate.");
+      throw new Error("Draw.");
     }
     if (this.players[0].getScore() > this.players[1].getScore()) {
       return this.players[0];
