@@ -1,5 +1,4 @@
 import { Mode } from "./Mode";
-import { Player } from "./Player";
 
 /**
  * @class Board

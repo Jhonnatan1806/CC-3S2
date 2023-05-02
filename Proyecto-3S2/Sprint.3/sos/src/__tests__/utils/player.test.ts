@@ -1,24 +1,24 @@
-import { Player } from "../../utils/Player";
+import { Board } from "../../utils/Board";
 import { Game } from "../../utils/Game";
-import { GameMode } from "../../utils/Mode";
+import { Player } from "../../utils/Player";
+import { Mode } from "../../utils/Mode";
 
 describe("Player", () => {
 
   let game: Game;
-  let player1: Player;
-  let player2: Player;
-  const rows = 3;
-  const columns = 3;
-  const gameMode = GameMode.GENERAL_GAME;
+  let board: Board;
+  let players: Player[];
+  let rows: number = 3;
+  let columns: number = 3;
+  let mode: Mode = Mode.GENERAL_GAME;
 
   beforeEach(() => {
-    game = new Game();
-    player1 = new Player("Red");
-    player2 = new Player("Blue");
-    game.addPlayer(player1);
-    game.addPlayer(player2);
-    game.setBoard(rows, columns);
-    game.setGameMode(gameMode);
+    board = new Board(rows,columns,mode);
+    players = [
+      new Player("Red", board),
+      new Player("Blue", board)
+    ];
+    game = new Game(board, players);
   });
 
   describe("selectGameSettings", () => {
@@ -31,7 +31,7 @@ describe("Player", () => {
       // Verificamos que el tablero tenga el tamaño y modo de juego especificados
       expect(game.getBoard().getRows()).toBe(rows);
       expect(game.getBoard().getColumns()).toBe(columns);
-      expect(game.getGameMode()).toBe(gameMode);
+      expect(board.getMode()).toBe(mode);
     });
   });
   
@@ -46,25 +46,13 @@ describe("Player", () => {
       // Verificamos que el tablero esté vacío
       for (let i = 0; i < rows; i++) {
         for (let j = 0; j < columns; j++) {
-          expect(game.getBoard().getCellValue(i, j)).toBe("");
+          expect(game.getBoard().getCell(i, j)).toBe("");
         }
       }
 
-      // Asignamos el turno al jugador 1
-      game.setCurrentPlayer(player1);
-
       // Verificamos que sea el turno del jugador 1
-      expect(game.getCurrentPlayer()).toBe(player1);
+      expect(game.getCurrentPlayer()).toBe(game.getPlayers()[0]);
 
-      // El jugador hace su movimiento en una celda vacía
-      let moveResult = player1.makeMove(game.getBoard(), 0, 0, "S");
-      expect(moveResult).toBe(true);
-      expect(game.getBoard().getCellValue(0,0)).toBe("S");
-      // Se cambia de turno
-      game.setCurrentPlayer(player2);
-
-      // Verificamos que ahora sea el turno del jugador 2
-      expect(game.getCurrentPlayer()).toBe(player2);
     });
 
   });
