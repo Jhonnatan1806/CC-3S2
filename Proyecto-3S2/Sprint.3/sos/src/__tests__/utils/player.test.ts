@@ -1,6 +1,6 @@
 import { Player } from "../../utils/Player";
 import { Game } from "../../utils/Game";
-import { GameMode } from "../../utils/GameMode";
+import { GameMode } from "../../utils/Mode";
 
 describe("Player", () => {
 

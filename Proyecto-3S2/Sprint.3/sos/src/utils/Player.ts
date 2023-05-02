@@ -1,5 +1,5 @@
 import { Board } from "./Board";
-import { GameMode } from "./GameMode";
+import { GameMode } from "./Mode";
 import { Score } from "./Score";
 
 /**

@@ -1,7 +1,7 @@
 import { Player } from "../../utils/Player";
 import { Board } from "../../utils/Board";
 import { Game } from "../../utils/Game";
-import { GameMode } from "../../utils/GameMode";
+import { GameMode } from "../../utils/Mode";
 
 describe("Game", () => {
   describe("setGameMode",() => {

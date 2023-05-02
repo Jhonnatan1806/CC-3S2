@@ -4,7 +4,7 @@
  * @readonly
  * @enum {number}
  */
-export enum GameMode {
+export enum Mode {
 
   /**
    * Modo de juego simple
