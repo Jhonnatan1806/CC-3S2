@@ -29,8 +29,8 @@ describe("Player", () => {
      */
     test("should create a board with the specified size and game mode", () => {
       // Verificamos que el tablero tenga el tamaño y modo de juego especificados
-      expect(game.getBoad().getRows()).toBe(rows);
-      expect(game.getBoad().getColumns()).toBe(columns);
+      expect(game.getBoard().getRows()).toBe(rows);
+      expect(game.getBoard().getColumns()).toBe(columns);
       expect(game.getGameMode()).toBe(gameMode);
     });
   });
@@ -46,7 +46,7 @@ describe("Player", () => {
       // Verificamos que el tablero esté vacío
       for (let i = 0; i < rows; i++) {
         for (let j = 0; j < columns; j++) {
-          expect(game.getBoad().getCellValue(i, j)).toBe("");
+          expect(game.getBoard().getCellValue(i, j)).toBe("");
         }
       }
 
@@ -57,15 +57,15 @@ describe("Player", () => {
       expect(game.getCurrentPlayer()).toBe(player1);
 
       // El jugador hace su movimiento en una celda vacía
-      const moveResult = player1.makeMove(game.getBoad(), 0, 0, "S");
+      let moveResult = player1.makeMove(game.getBoard(), 0, 0, "S");
       expect(moveResult).toBe(true);
-      expect(game.getBoad().getCellValue(0, 0)).toBe("S");
-
+      expect(game.getBoard().getCellValue(0,0)).toBe("S");
       // Se cambia de turno
       game.setCurrentPlayer(player2);
 
       // Verificamos que ahora sea el turno del jugador 2
       expect(game.getCurrentPlayer()).toBe(player2);
     });
+
   });
 });

@@ -78,7 +78,7 @@ export class Board {
     if(this.grid[row][column] !== "") {
       throw new Error("Cell already occupied.");
     }
-    this.grid[row][column] = value;
+    this.grid[row][column] = value; 
   }
 
   /**

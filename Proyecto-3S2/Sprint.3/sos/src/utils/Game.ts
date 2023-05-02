@@ -37,7 +37,7 @@ export class Game {
    * @returns {GameMode} El modo de juego.
    * @throws {Error} Si no hay modo de juego.
    */ 
-  public getBoad(): Board {
+  public getBoard(): Board {
     if (this.board == null) {
       throw new Error("No hay tablero.");
     }

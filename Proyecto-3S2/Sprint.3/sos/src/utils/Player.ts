@@ -46,7 +46,7 @@ export class Player {
    * @param {string} letter - La letra que se desea colocar en la celda.
    * @returns {boolean} True si el movimiento fue exitoso, False si no lo fue.
    */
-  public makeMove(board: Board, row: number, col: number, letter: string, gameMode: GameMode): boolean {
+  public makeMove(board: Board, row: number, col: number, letter: string): boolean {
     const currentValue = board.getCellValue(row, col);
     if (currentValue !== "") {
       return false; // La celda ya está ocupada
