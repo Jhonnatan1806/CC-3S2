@@ -45,8 +45,16 @@ export class Game {
     return this.currentPlayer;
   }
 
-  public playMove(row: number, column: number, letter: string): void {
+  public makeMove(row: number, column: number, letter: string): void {
     this.currentPlayer.makeMove( row, column, letter);
+    if( this.currentPlayer === this.players[0]){
+      this.currentPlayer = this.players[1];
+    }else{
+      this.currentPlayer = this.players[0];
+    }
+    if (this.board.checkSOS() === 0) {
+      this.isGameOver = true;
+    }
   }
 
   public getWinner(): Player {

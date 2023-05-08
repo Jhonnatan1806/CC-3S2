@@ -55,25 +55,16 @@ describe("Game", () => {
       let game: Game = new Game(board, players);
 
       // realizamos un movimiento con el jugador 1
-      game.getCurrentPlayer().makeMove(0, 0, "S");
-
-      // cambiamos de jugador 2
-      game.setCurrentPlayer(game.getPlayers()[1]);
+      game.makeMove(0, 0, "S");
 
       // realizamos otro movimiento con el jugador 2
-      game.getCurrentPlayer().makeMove(0, 1, "O");
-
-      // cambiamos de jugador 1
-      game.setCurrentPlayer(game.getPlayers()[0]);
+      game.makeMove(0, 1, "O");
 
       // realizamos otro movimiento con el jugador 1
-      game.getCurrentPlayer().makeMove(1, 0, "O");
-
-      // cambiamos de jugador 2
-      game.setCurrentPlayer(game.getPlayers()[1]);
+      game.makeMove(1, 0, "O");
 
       // realizamos otro movimiento con el jugador 2
-      game.getCurrentPlayer().makeMove(0, 2, "S");
+      game.makeMove(0, 2, "S");
 
       // verificamos al ganador
       expect(game.getWinner().getName()).toBe("Blue");
@@ -99,55 +90,31 @@ describe("Game", () => {
       let game: Game = new Game(board, players);
 
       // realizamos un movimiento con el jugador 1
-      game.getCurrentPlayer().makeMove(0, 0, "S");
-
-      // cambiamos de jugador 2
-      game.setCurrentPlayer(game.getPlayers()[1]);
+      game.makeMove(0, 0, "S");
 
       // realizamos otro movimiento con el jugador 2
-      game.getCurrentPlayer().makeMove(0, 1, "O");
-      
-      // cambiamos de jugador 1
-      game.setCurrentPlayer(game.getPlayers()[0]);
+      game.makeMove(0, 1, "O");
 
       // realizamos otro movimiento con el jugador 1
-      game.getCurrentPlayer().makeMove(0, 2, "O");
-
-      // cambiamos de jugador 2
-      game.setCurrentPlayer(game.getPlayers()[1]);
+      game.makeMove(0, 2, "O");
 
       // realizamos otro movimiento con el jugador 2
-      game.getCurrentPlayer().makeMove(1, 0, "S");
-    
-      // cambiamos de jugador 1
-      game.setCurrentPlayer(game.getPlayers()[0]);
+      game.makeMove(1, 0, "S");
 
       // realizamos otro movimiento con el jugador 1
-      game.getCurrentPlayer().makeMove(1, 1, "O");
-
-      // cambiamos de jugador 2
-      game.setCurrentPlayer(game.getPlayers()[1]);
+      game.makeMove(1, 1, "O");
 
       // realizamos otro movimiento con el jugador 2
-      game.getCurrentPlayer().makeMove(1, 2, "O");
-
-      // cambiamos de jugador 1
-      game.setCurrentPlayer(game.getPlayers()[0]);
+      game.makeMove(1, 2, "O");
       
       // realizamos otro movimiento con el jugador 1
-      game.getCurrentPlayer().makeMove(2, 0, "S");
-
-      // cambiamos de jugador 2
-      game.setCurrentPlayer(game.getPlayers()[1]);
+      game.makeMove(2, 0, "S");
 
       // realizamos otro movimiento con el jugador 2
-      game.getCurrentPlayer().makeMove(2, 1, "O");
-
-      // cambiamos de jugador 1
-      game.setCurrentPlayer(game.getPlayers()[0]);
+      game.makeMove(2, 1, "O");
 
       // realizamos otro movimiento con el jugador 1
-      game.getCurrentPlayer().makeMove(2, 2, "O");
+      game.makeMove(2, 2, "O");
 
       // verificamos que no haya ganador
       expect(() => {game.getWinner()}).toThrow("Draw");
