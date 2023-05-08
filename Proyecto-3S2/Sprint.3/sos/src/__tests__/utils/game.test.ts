@@ -10,7 +10,7 @@ describe("Game", () => {
   let players: Player[];
   let rows: number = 3;
   let columns: number = 3;
-  let mode: Mode = Mode.GENERAL_GAME;
+  let mode: Mode = Mode.SIMPLE_GAME;
 
   beforeEach(() => {
     board = new Board(rows,columns,mode);
@@ -42,18 +42,6 @@ describe("Game", () => {
      */
     test("should end the game and show a victory message to the winning player", () => {
 
-      // creamos un tablero de 3x3
-      let board: Board  = new Board();
-
-      // creamos dos jugadores
-      let players: Player[] = [
-        new Player("Red", board),
-        new Player("Blue", board)
-      ];
-
-      // creamos un tablero de 3x3
-      let game: Game = new Game(board, players);
-
       // realizamos un movimiento con el jugador 1
       game.makeMove(0, 0, "S");
 
@@ -76,18 +64,6 @@ describe("Game", () => {
      * ENTONCES, el juego debe terminar y mostrar el mensaje de empate.
      */
     test("should end the game and show a draw message", () => {
-      
-      // creamos un tablero de 3x3
-      let board: Board  = new Board();
-
-      // creamos dos jugadores
-      let players: Player[] = [
-        new Player("Red", board),
-        new Player("Blue", board)
-      ];
-
-      // creamos un tablero de 3x3
-      let game: Game = new Game(board, players);
 
       // realizamos un movimiento con el jugador 1
       game.makeMove(0, 0, "S");

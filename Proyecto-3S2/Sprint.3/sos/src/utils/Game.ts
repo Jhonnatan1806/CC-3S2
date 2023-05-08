@@ -1,3 +1,4 @@
+import { Mode } from "fs";
 import { Board } from "./Board";
 import { Player } from "./Player";
 
@@ -32,6 +33,21 @@ export class Game {
       throw new Error("No players");
     }
     return this.players;
+  }
+
+  public getMode(): Mode {
+    if (this.board == null) {
+      throw new Error("No board");
+    }
+    return this.board.getMode();
+  }
+
+  public getSize(): {rows: number, columns: number} {
+    if (this.board == null) {
+      throw new Error("No board");
+    }
+    return { rows: this.board.getRows(), 
+      columns: this.board.getColumns()};
   }
 
   public setCurrentPlayer(player: Player): void {
