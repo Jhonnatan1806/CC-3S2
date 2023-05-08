@@ -17,16 +17,16 @@
 
 | Nombre e ID de historia de usuario | AC ID | Nombre Clase(s) | Nombre Método(s) | Estatus (completo o no) | Notas (opcional) |
 |---|---|---|---|---|---|
-| 1. Escoge el tamaño del tablero | AC 1.1 | Board | Board(n,m) getRows() getColumns() | Completado | |
-| | AC 1.2 | Board | Board() getRows() getColumns() | Completado | |
-| 2. Escoge el modo de juego de un tablero escogido | AC 2.1 | Board, Mode | Board(mode) getMode() | Completado | |
-| | AC 2.2 | Board, Mode | Board() getMode() | Completado | |
-| 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos | AC 3.1 | Board Game Player | Game(board, players[]) getSize() getMode() | Completado | |
-| 4. Hacer un movimiento en un juego simple | AC 4.1 | Board Game Player Mode | Game(board, players[]) setCurrentPlayer(player) | Completado |  |
-|  | AC 4.2 | Board Game Player Mode | Player(name) makeMove(x,y,str) | Completado |  |
-|  | AC 4.3 | Board Game Player Mode | Player(name) makeMove(x,y,str) getCell(x,y) | Completado |  |
-| 5. Un juego simple a terminado | AC 5.1 | Board Game Player Mode Score | Game(board, players[]) getWinner() checkSOS() getScore() | Completado | |
-| | AC 5.2 | Board Game Player Mode Score | Game(board, players[]) getWinner() checkSOS() getScore()  | Completado | |
+| 1. Escoge el tamaño del tablero | AC 1.1 | Board | Board(n,m) getRows() getColumns() | Completado | Crea un objeto Board con n filas y m columnas.  |
+| | AC 1.2 | Board | Board() getRows() getColumns() | Completado | Crea un objeto Board con 3 filas y 3 columnas por defecto. |
+| 2. Escoge el modo de juego de un tablero escogido | AC 2.1 | Board, Mode | Board(mode) getMode() | Completado | Crea un objeto Board con el modo de juego especificado |
+| | AC 2.2 | Board, Mode | Board() getMode() | Completado | Crea un objeto Board con el modo de juego simple por defecto. |
+| 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos | AC 3.1 | Board Game Player | Game(board, players[]) getSize() getMode() | Completado | Crea un nuevo objeto Game con un objeto Board y una lista de objetos Player. La lista de jugadores debe tener al menos dos elementos. La función getSize() devuelve un objeto con las propiedades rows y columns, correspondientes al tamaño del tablero. La función getMode() devuelve el modo de juego actual del objeto Board |
+| 4. Hacer un movimiento en un juego simple | AC 4.1 | Board Game Player Mode | Game(board, players[]) setCurrentPlayer(player) | Completado | Establece al jugador actual en el objeto Game. Esta función se usa para cambiar el turno de los jugadores. |
+|  | AC 4.2 | Board Game Player Mode | Player(name) makeMove(x,y,str) | Completado | Crea un nuevo objeto Player con el nombre especificado. La función makeMove(x, y, str) permite al jugador hacer un movimiento en las coordenadas (x, y) con el símbolo especificado en str. |
+|  | AC 4.3 | Board Game Player Mode | Player(name) makeMove(x,y,str) getCell(x,y) | Completado | No permite hacer un movimiento si es que ya existe una letra en la celda. |
+| 5. Un juego simple a terminado | AC 5.1 y 5.2 | Board Game Player Mode Score | Game(board, players[]) getWinner() checkSOS() getScore() | Completado | Determina el ganador del juego actual. La función checkSOS() comprueba si se ha formado una cadena "SOS" en el tablero, y la función getScore() devuelve la puntuación actual de cada jugador. |
+
 
 ## Pruebas vs Historias de Usuario/Criterio de Aceptación
 
@@ -70,7 +70,7 @@ Tomamos la clase game como principal, esta clase se encarga de recibir de parama
 
 - setCurrentPlayer(player): Este método se encarga de cambiar el jugador actual, recibe como parámetro el jugador que va a ser el actual.
 
-- getWinner(): Este método se encarga de retornar el ganador del juego, si no hay ganador retorna null.
+- getWinner(): Este método se encarga de retornar el ganador del juego, si no hay ganador retorna un error Draw.
 
 ### Clase Board
 
