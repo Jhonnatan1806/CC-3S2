@@ -32,11 +32,13 @@ export class Player {
   public makeMove(row: number, col: number, letter: string): boolean {
     const currentValue = this.board.getCell(row, col);
     if (currentValue !== "") {
-      return false;
+      throw new Error("Cell is not empty");
     }
     this.board.setCell(row, col, letter);
     let points = this.board.checkSOS();
-    this.score.addScore(points);
+    if (points !== 0) {
+      this.score.addScore(points);
+    }
     return true;
   }
 }

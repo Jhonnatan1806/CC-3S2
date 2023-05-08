@@ -11,13 +11,13 @@ export class Game {
   private board: Board;
   private players: Player[];
   private currentPlayer: Player;
-  private gameWon: boolean;
+  private isGameOver: boolean;
 
   constructor( board: Board, players: Player[]) {
     this.players = players;
     this.board = board;
     this.currentPlayer = players[0];
-    this.gameWon = false;
+    this.isGameOver = false;
   }
 
   public getBoard(): Board {
@@ -59,7 +59,8 @@ export class Game {
     return this.players[1];
   }
 
-  public isGameWon(): boolean {
-    return this.gameWon;
+  public getGameOver(): boolean {
+    return this.isGameOver;
   }
+
 }
