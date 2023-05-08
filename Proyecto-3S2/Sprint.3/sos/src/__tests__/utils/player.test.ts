@@ -35,6 +35,7 @@ describe("Player", () => {
       // Verificamos que sea el turno del jugador 1
       expect(game.getCurrentPlayer()).toBe(game.getPlayers()[0]);
     });
+
     /**
      * AC 4.2
      * CUANDO el jugador seleccione una celda vacía

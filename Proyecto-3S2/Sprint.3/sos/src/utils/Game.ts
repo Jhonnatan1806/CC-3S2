@@ -22,14 +22,14 @@ export class Game {
 
   public getBoard(): Board {
     if (this.board == null) {
-      throw new Error("No board.");
+      throw new Error("No board");
     }
     return this.board;
   }
 
   public getPlayers(): Player[] {
     if (this.players.length == 0) {
-      throw new Error("No players.");
+      throw new Error("No players");
     }
     return this.players;
   }
@@ -40,7 +40,7 @@ export class Game {
 
   public getCurrentPlayer(): Player {
     if (this.currentPlayer == null) {
-      throw new Error("No current player found.");
+      throw new Error("No current player found");
     }
     return this.currentPlayer;
   }
@@ -51,7 +51,7 @@ export class Game {
 
   public getWinner(): Player {
     if (this.players[0].getScore() === this.players[1].getScore()) {
-      throw new Error("Draw.");
+      throw new Error("Draw");
     }
     if (this.players[0].getScore() > this.players[1].getScore()) {
       return this.players[0];

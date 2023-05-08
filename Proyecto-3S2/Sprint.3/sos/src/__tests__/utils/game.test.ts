@@ -53,13 +53,6 @@ describe("Game", () => {
 
       // creamos un tablero de 3x3
       let game: Game = new Game(board, players);
-      
-      /*
-       * Tablero de ejemplo:
-       * | S | O | S |
-       * | O |   |   |
-       * |   |   |   |
-       */ 
 
       // realizamos un movimiento con el jugador 1
       game.getCurrentPlayer().makeMove(0, 0, "S");
@@ -84,6 +77,81 @@ describe("Game", () => {
 
       // verificamos al ganador
       expect(game.getWinner().getName()).toBe("Blue");
+    });
+
+    /**
+     * AC 5.2
+     * CUANDO el tablero se llena completamente sin que ningún jugador haya completado la palabra SOS, se le debe mostrar un mensaje indicando que la partida ha terminado en empate
+     * ENTONCES, el juego debe terminar y mostrar el mensaje de empate.
+     */
+    test("should end the game and show a draw message", () => {
+      
+      // creamos un tablero de 3x3
+      let board: Board  = new Board();
+
+      // creamos dos jugadores
+      let players: Player[] = [
+        new Player("Red", board),
+        new Player("Blue", board)
+      ];
+
+      // creamos un tablero de 3x3
+      let game: Game = new Game(board, players);
+
+      // realizamos un movimiento con el jugador 1
+      game.getCurrentPlayer().makeMove(0, 0, "S");
+
+      // cambiamos de jugador 2
+      game.setCurrentPlayer(game.getPlayers()[1]);
+
+      // realizamos otro movimiento con el jugador 2
+      game.getCurrentPlayer().makeMove(0, 1, "O");
+      
+      // cambiamos de jugador 1
+      game.setCurrentPlayer(game.getPlayers()[0]);
+
+      // realizamos otro movimiento con el jugador 1
+      game.getCurrentPlayer().makeMove(0, 2, "O");
+
+      // cambiamos de jugador 2
+      game.setCurrentPlayer(game.getPlayers()[1]);
+
+      // realizamos otro movimiento con el jugador 2
+      game.getCurrentPlayer().makeMove(1, 0, "S");
+    
+      // cambiamos de jugador 1
+      game.setCurrentPlayer(game.getPlayers()[0]);
+
+      // realizamos otro movimiento con el jugador 1
+      game.getCurrentPlayer().makeMove(1, 1, "O");
+
+      // cambiamos de jugador 2
+      game.setCurrentPlayer(game.getPlayers()[1]);
+
+      // realizamos otro movimiento con el jugador 2
+      game.getCurrentPlayer().makeMove(1, 2, "O");
+
+      // cambiamos de jugador 1
+      game.setCurrentPlayer(game.getPlayers()[0]);
+      
+      // realizamos otro movimiento con el jugador 1
+      game.getCurrentPlayer().makeMove(2, 0, "S");
+
+      // cambiamos de jugador 2
+      game.setCurrentPlayer(game.getPlayers()[1]);
+
+      // realizamos otro movimiento con el jugador 2
+      game.getCurrentPlayer().makeMove(2, 1, "O");
+
+      // cambiamos de jugador 1
+      game.setCurrentPlayer(game.getPlayers()[0]);
+
+      // realizamos otro movimiento con el jugador 1
+      game.getCurrentPlayer().makeMove(2, 2, "O");
+
+      // verificamos que no haya ganador
+      expect(() => {game.getWinner()}).toThrow("Draw");
+
     });
 
   });
