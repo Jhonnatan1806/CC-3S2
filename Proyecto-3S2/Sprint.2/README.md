@@ -40,13 +40,3 @@
 | 3. Comienza un nuevo juego del tamaño de tablero y del modo de juego elegidos  | 3.1 | ![BaordAndGameMode](Imagenes/boardsize&gameMode.png) | | | 
 | 4. Hacer un movimiento en un juego simple | 4.1 | ![MakeAmove](Imagenes/makeAmove.png) | | | 
 | 5. Un juego simple a terminado | 5.1 | ![Finished](Imagenes/gameFinished.png) | | | 
-
-**3. Otras pruebas automatizadas o manuales que no corresponden a los criterios de aceptación de las historias de usuario anteriores**
-
-| Número | Entrada prueba | Resultado Esperado | Nombre de clase del código de prueba | Nombre del método del código de prueba |
-|---|---|---|---|---|
-| 1 | | | | | 
-| 2 | | | | | 
-| 3 | | | | | 
-| 4 | | | | | 
-| 5 | | | | | 
