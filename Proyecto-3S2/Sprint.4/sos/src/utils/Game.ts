@@ -2,6 +2,7 @@ import { Mode } from "./Mode";
 import { Board } from "./Board";
 import { Player } from "./Player";
 import { Letter } from "./Letter";
+import { IA } from "./IA";
 
 /**
  * @class Game
@@ -89,7 +90,7 @@ export class Game {
    * @throws Error si hay empate.
    * @returns {Player} El jugador ganador.
    */
-  public getWinner(): Player {
+  public getWinner(): Player | IA {
     if (this.players[0].getPoints() === this.players[1].getPoints()) {
       throw new Error("Draw.");
     }
@@ -110,7 +111,7 @@ export class Game {
     if (this.board.getCell(row, column) !== "") {
       throw new Error("Cell is not empty");
     }
-    if (this.isGameOver || this.board.isFull()) {
+    if (this.board.isFull()) {
       throw new Error("Game is over.");
     }
     this.board.setCell(row, column, letter);

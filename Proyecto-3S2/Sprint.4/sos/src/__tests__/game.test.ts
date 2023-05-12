@@ -1,8 +1,10 @@
+import { IA } from "@/utils/IA";
 import { Board } from "../utils/Board";
 import { Game } from "../utils/Game";
 import { Letter } from "../utils/Letter";
 import { Mode } from "../utils/Mode";
 import { Player } from "../utils/Player";
+import { Difficulty } from "@/utils/Difficulty";
 
 describe("Game", () => {
   describe("getMode()", () => {
@@ -29,7 +31,6 @@ describe("Game", () => {
       const game = new Game(board, players);
       expect(game.getMode()).toBe(Mode.SIMPLE_GAME);
     });
-
   });
 
   describe("getBoard()", () => {
@@ -113,6 +114,52 @@ describe("Game", () => {
         game.makeMove(movement[0], movement[1], movement[2]);
       });
       expect(() => game.getWinner()).toThrow("Draw.");
+    });
+
+    /**
+     * AC 7.1
+     * CUANDO el tablero está completamente lleno y existan un jugador y la IA
+     * ENTONCES, el juego selecciona el ganador.
+     */
+    test("AC 7.1", () => {
+      const board = new Board();
+      const ia = new IA("Red", Difficulty.EASY);
+      const players = [new Player("Blue"), ia];
+      const mode = Mode.SIMPLE_GAME;
+      const game = new Game(board, players, mode);
+      const possibleMovements: [number, number, Letter][] = [
+        [0, 0, Letter.S],
+        [0, 1, Letter.O],
+        [0, 2, Letter.S],
+        [1, 0, Letter.S],
+        [1, 1, Letter.O],
+        [1, 2, Letter.S],
+        [2, 0, Letter.S],
+        [2, 1, Letter.O],
+        [2, 2, Letter.S],
+      ];
+      for (const movement of possibleMovements) {
+        const [row, col, letter] = movement;
+        if (board.getCell(row, col) === Letter.EMPTY && !board.isFull()) {
+          game.makeMove(row, col, letter);
+          if (!board.isFull()) {
+            const [rowIA, colIA, letterIA] = ia.getMove(board);
+            game.makeMove(rowIA, colIA, letterIA);
+            if (board.isFull()) {
+              break;
+            }
+          } else {
+            break;
+          }
+        }
+      }
+      const winner = game.getWinner();
+      expect([players[0],players[1]]).toContain(winner);
+      if (winner === undefined) {
+        expect(() => game.getWinner()).toThrow("Draw.");
+      } else {
+        expect(() => game.getWinner()).not.toThrow();
+      }
     });
   });
 });

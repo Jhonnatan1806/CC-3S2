@@ -49,6 +49,7 @@ describe('ia', () => {
       const humanPlayer = new Player('Human');
       const computerPlayer = new IA('Computer', Difficulty.MEDIUM);
       const game = new Game(board, [humanPlayer, computerPlayer]);
+      game.makeMove(0,0,Letter.S)
       const [row, col] = computerPlayer.getMove(game.getBoard());
       expect(board.getCell(row, col)).toBe(Letter.EMPTY);
     });
