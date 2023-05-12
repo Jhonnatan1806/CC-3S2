@@ -1,30 +1,17 @@
+import { Letter } from "@/utils/Letter";
 import { Board } from "../utils/Board";
-import { Mode } from "../utils/Mode";
 
 describe("Board", () => {
-  describe("board size", () => {
-    /**
+  describe("getGrid()", () => {
+    /*
      * AC 1.1
      * CUANDO el jugador inicie el juego de SOS, se le debe permitir escoger el tamaño del tablero.
      * ENTONCES, el sistema debe mostrar el tablero con el tamaño seleccionado.
      */
-    test("should create a board with the specified number of rows and columns", () => {
-      // Definimos el número de filas y columnas para el tablero de prueba
-      const rows = 3;
-      const columns = 3;
-
-      // Creamos un nuevo tablero con las filas y columnas especificadas
-      const board = new Board(rows, columns);
-
-      // Verificamos que el tablero tenga el número de filas y columnas especificado
-      expect(board.getRows()).toBe(rows);
-      expect(board.getColumns()).toBe(columns);
-
-      // Verificamos que el tablero tenga el tamaño correcto
-      expect(board.getGrid()).toHaveLength(rows);
-
-      // Verificamos que cada fila del tablero tenga el tamaño correcto
-      board.getGrid().forEach(row => expect(row).toHaveLength(columns));
+    test("AC 1.1", () => {
+      const board = new Board(3, 3);
+      expect(board.getGrid()).toHaveLength(3);
+      board.getGrid().forEach((row) => expect(row).toHaveLength(3));
     });
 
     /**
@@ -32,63 +19,59 @@ describe("Board", () => {
      * CUANDO el usuario no selecciona un tamaño de tablero, se debe utilizar el tamaño 3x3 de manera predeterminada.
      * ENTONCES, si el usuario inicia una partida sin haber seleccionado un tamaño de tablero, el juego debe iniciarse en el tablero 3x3.
      */
-    test("should create a board with the default number of rows and columns", () => {
-      // Definimos el modo de juego para el tablero de prueba
-      const rows = 3;
-      const columns = 3;
-      const mode = Mode.GENERAL_GAME;
-
-      // Creamos un nuevo tablero sin especificar el número de filas y columnas
-      const board = new Board(undefined, undefined);
-
-      // Verificamos que el tablero tenga el número de filas y columnas predeterminado
-      expect(board.getRows()).toBe(rows);
-      expect(board.getColumns()).toBe(columns);
-
-      // Verificamos que el tablero tenga el tamaño correcto
-      expect(board.getGrid()).toHaveLength(rows);
-
-      // Verificamos que cada fila del tablero tenga el tamaño correcto
-      board.getGrid().forEach(row => expect(row).toHaveLength(columns));
+    test("AC 1.2", () => {
+      const board = new Board();
+      expect(board.getGrid()).toHaveLength(3);
+      board.getGrid().forEach((row) => expect(row).toHaveLength(3));
     });
-
   });
 
-  describe("board mode", () => {
+  describe("getCell()", () => {
     /**
-     * AC 2.1
-     * CUANDO el jugador seleccione un modo de juego,
-     * ENTONCES, el sistema debe mostrar el tablero con el modo de juego seleccionado.
+     * AC Board.1
+     * CUANDO el jugador crea un tablero vacío,
+     * ENTONCES, el sistema debe mostrar el tablero vacío.
      */
-    test("should create a board with the specified game mode", () => {
-      // Definimos el modo de juego para el tablero de prueba
-      const rows = 3;
-      const columns = 3;
-      const mode = Mode.GENERAL_GAME;
-
-      // Creamos un nuevo tablero con las filas y columnas especificadas con un modo de juego
-      const board = new Board(rows, columns);
-
-      // Verificamos que el tablero tenga el modo de juego especificado
-      expect(mode).toBe(mode);
+    test("AC B.1", () => {
+      const board = new Board(3, 3);
+      expect(board.getCell(0, 0)).toBe(Letter.EMPTY);
     });
+  });
 
+  describe("setCell()", () => {
     /**
-     * AC 2.2 
-     * CUANDO el usuario no selecciona un modo de juego, se debe utilizar el modo simple de manera predeterminada.
-     * ENTONCES, si el usuario inicia una partida sin haber seleccionado un modo de juego, el juego debe iniciarse en el tablero seleccionado con el modo simple.
+     * AC Board.2
+     * CUANDO el jugador selecciona una celda en el tablero y coloca una letra,
+     * ENTONCES, el sistema debe mostrar el tablero con la letra colocada en la celda seleccionada.
      */
-    test("should create a board with the default game mode", () => {
-      // Definimos el modo de juego para el tablero de prueba
-      const rows = 3;
-      const columns = 3;
-      const mode = Mode.SIMPLE_GAME;
+    test("AC B.2", () => {
+      const board = new Board(3, 3);
+      board.setCell(0, 0, Letter.S);
+      expect(board.getCell(0, 0)).toBe(Letter.S);
+    });
+  });
 
-      // Creamos un nuevo tablero con las filas y columnas especificadas sin un modo de juego
-      const board = new Board(rows, columns);
-
-      // Verificamos que el tablero tenga el modo de juego predeterminado
-      expect(mode).toBe(mode);
+  /**
+   * AC Board.3
+   * CUANDO el sistema detecta que el tablero está lleno,
+   * ENTONCES, el sistema debe mostrar el tablero lleno.
+   */
+  describe("isFull()", () => {
+    test("AC B.3", () => {
+      const board = new Board(3, 3);
+      const movements: [number, number, Letter][] = [
+        [0, 0, Letter.S],
+        [0, 1, Letter.O],
+        [0, 2, Letter.S],
+        [1, 0, Letter.O],
+        [1, 1, Letter.S],
+        [1, 2, Letter.O],
+        [2, 0, Letter.S],
+        [2, 1, Letter.O],
+        [2, 2, Letter.S],
+      ];
+      movements.forEach(([row, col, letter]) => board.setCell(row, col, letter));
+      expect(board.isFull()).toBe(true);
     });
   });
 });

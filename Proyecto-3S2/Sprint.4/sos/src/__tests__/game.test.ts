@@ -5,8 +5,35 @@ import { Mode } from "../utils/Mode";
 import { Player } from "../utils/Player";
 
 describe("Game", () => {
+  describe("getMode()", () => {
+    /**
+     * AC 2.1
+     * CUANDO el jugador seleccione un modo de juego,
+     * ENTONCES, el sistema debe mostrar el tablero con el modo de juego seleccionado.
+     */
+    test("AC 2.1", () => {
+      const board = new Board(3, 3);
+      const players = [new Player("Red"), new Player("Blue")];
+      const game = new Game(board, players, Mode.SIMPLE_GAME);
+      expect(game.getMode()).toBe(Mode.SIMPLE_GAME);
+    });
+
+    /**
+     * AC 2.2
+     * CUANDO el usuario no selecciona un modo de juego, se debe utilizar el modo simple de manera predeterminada.
+     * ENTONCES, si el usuario inicia una partida sin haber seleccionado un modo de juego, el juego debe iniciarse en el tablero seleccionado con el modo simple.
+     */
+    test("AC 2.2", () => {
+      const board = new Board(3, 3);
+      const players = [new Player("Red"), new Player("Blue")];
+      const game = new Game(board, players);
+      expect(game.getMode()).toBe(Mode.SIMPLE_GAME);
+    });
+
+  });
+
   describe("getBoard()", () => {
-    /*
+    /**
      * AC 3.1
      * CUANDO el jugador seleccione un tamaño de tablero y un modo de juego,
      * ENTONCES, el sistema debe mostrar el tablero con el tamaño y modo de juego seleccionado.
@@ -23,7 +50,7 @@ describe("Game", () => {
   });
 
   describe("getCurrentPlayer()", () => {
-    /*
+    /**
      * AC 4.1
      * CUANDO el jugador inicie un juego simple de SOS, se le debe mostrar un tablero vacío y debe ser el turno del jugador 1 para hacer un movimiento.
      * ENTONCES, el jugador debe ser capaz de seleccionar una celda vacía en el tablero para colocar su letra S o O.
@@ -39,7 +66,7 @@ describe("Game", () => {
   });
 
   describe("getWinner()", () => {
-    /*
+    /**
      * AC 5.1
      * CUANDO un jugador completa la palabra SOS horizontalmente, verticalmente o diagonalmente, se le debe mostrar un mensaje indicando que ha ganado la partida.
      * ENTONCES, el juego debe terminar y mostrar el mensaje de victoria al jugador que ganó.
@@ -61,7 +88,7 @@ describe("Game", () => {
       expect(game.getWinner()).toBe(players[1]);
     });
 
-    /*
+    /**
      * AC 5.2
      * CUANDO el tablero se llena completamente sin que ningún jugador haya completado la palabra SOS, se le debe mostrar un mensaje indicando que la partida ha terminado en empate.
      * ENTONCES, el juego debe terminar y mostrar el mensaje de empate.
