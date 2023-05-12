@@ -13,7 +13,7 @@
 
 |Nombre del archivo de código fuente| Código de producción o de prueba | # Líneas de código | 
 |---|---|---|
-|Board.ts | ![Board](Imagenes/Board.png)| | 
+|Board.ts | ![Board](Imagenes/Board.png)|  | 
 | Game.ts| ![Game](Imagenes/Game.png)| | 
 | Letter.ts| ![Letter](Imagenes/Letter.png)| | 
 | Mode.ts|![Mode](Imagenes/Mode.png) | | 
@@ -38,8 +38,6 @@
 |3. Respuesta rápida | 3.1 | | |  
 |4. Comportamiento justo y ético | 4.1 | | |  
 
-**Pruebas manuales**
-
 ## Diagrama de clases del código en producción y jerarqía de clases en el diseño 
-
+![Diagrama de clases](Imagenes/uml.png)
 
