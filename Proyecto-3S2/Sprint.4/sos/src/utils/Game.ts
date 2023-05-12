@@ -90,12 +90,15 @@ export class Game {
    * @returns {Player} El jugador ganador.
    */
   public getWinner(): Player {
-    const player1 = this.players[0];
-    const player2 = this.players[1];
-    if (player1.getScore().getPoints() === player2.getScore().getPoints()) {
+    if (!this.isGameOver) {
+      throw new Error("Game is not over.");
+    }
+    if (this.players[0].getPoints() === this.players[1].getPoints()) {
       throw new Error("Draw.");
     }
-    return player1.getScore() > player2.getScore() ? player1 : player2;
+    return this.players[0].getPoints() > this.players[1].getPoints()
+      ? this.players[0]
+      : this.players[1];
   }
 
   /**
@@ -109,6 +112,9 @@ export class Game {
   public makeMove(row: number, column: number, letter: Letter): void {
     if (this.board.getCell(row, column) !== "") {
       throw new Error("Cell is not empty");
+    }
+    if (this.isGameOver || this.board.isFull()) {
+      throw new Error("Game is over.");
     }
     this.board.setCell(row, column, letter);
     this.getCurrentPlayer().addPoints(this.board.checkSOS(this.mode));

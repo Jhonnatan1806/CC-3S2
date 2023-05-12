@@ -15,4 +15,11 @@ export enum Letter {
    * @type {string}
    */
   O = "O",
+
+  /**
+   * Celda vacía
+   * @type {string}
+   * @default
+   */
+  EMPTY = ""
 }

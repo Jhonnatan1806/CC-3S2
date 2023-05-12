@@ -1,4 +1,3 @@
-import { Board } from "./Board";
 import { Score } from "./Score";
 
 /**
@@ -46,5 +45,13 @@ export class Player {
       throw new Error("Points must be a non-negative integer.");
     }
     this.score.setPoints(this.score.getPoints() + points);
+  }
+
+  /**
+   * Obtiene los puntos del jugador.
+   * @returns {number} - Los puntos del jugador. 
+   */
+  public getPoints(): number {
+    return this.score.getPoints();
   }
 }
