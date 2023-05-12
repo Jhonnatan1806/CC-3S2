@@ -26,6 +26,20 @@ export class Board {
   }
 
   /**
+   * Clona el tablero.
+   * @returns {Board} Clon del tablero.
+   */
+  public clone(): Board {
+    const newBoard = new Board(this.rows, this.columns);
+    for (let i = 0; i < this.rows; i++) {
+      for (let j = 0; j < this.columns; j++) {
+        newBoard.setCell(i, j, this.grid[i][j]);
+      }
+    }
+    return newBoard;
+  }
+
+  /**
    * Retorna el número de filas del tablero.
    * @returns {number} Número de filas del tablero.
    */
@@ -117,13 +131,4 @@ export class Board {
     return 0;
   }
 
-  public clone(): Board {
-    const newBoard = new Board(this.rows, this.columns);
-    for (let i = 0; i < this.rows; i++) {
-      for (let j = 0; j < this.columns; j++) {
-        newBoard.setCell(i, j, this.grid[i][j]);
-      }
-    }
-    return newBoard;
-  }
 }

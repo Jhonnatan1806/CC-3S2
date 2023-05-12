@@ -23,7 +23,7 @@ export class Game {
    * @throws Error si no se provee un tablero.
    * @throws Error si no se proveen al menos dos jugadores.
    */
-  constructor(board: Board, players: Player[], mode: Mode) {
+  constructor(board: Board, players: Player[], mode: Mode = Mode.SIMPLE_GAME) {
     if (!board) {
       throw new Error("No board provided.");
     }
@@ -90,9 +90,6 @@ export class Game {
    * @returns {Player} El jugador ganador.
    */
   public getWinner(): Player {
-    if (!this.isGameOver) {
-      throw new Error("Game is not over.");
-    }
     if (this.players[0].getPoints() === this.players[1].getPoints()) {
       throw new Error("Draw.");
     }

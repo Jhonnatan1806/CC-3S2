@@ -3,6 +3,11 @@ import { Player } from "./Player";
 import { Board } from "./Board";
 import { Mode } from "./Mode";
 
+/**
+ * @class IA
+ * @classdesc Representa un jugador IA.
+ * @extends Player
+ */
 export class IA extends Player {
   private readonly depth: number;
   private readonly mode: Mode = Mode.SIMPLE_GAME;
