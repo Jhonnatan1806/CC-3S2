@@ -1,7 +1,8 @@
 import { Letter } from "./Letter";
 import { Player } from "./Player";
+import { Difficulty } from "./Difficulty";
+import { Movement } from "./Movement";
 import { Board } from "./Board";
-import { Mode } from "./Mode";
 
 /**
  * @class IA
@@ -9,70 +10,41 @@ import { Mode } from "./Mode";
  * @extends Player
  */
 export class IA extends Player {
-  private readonly depth: number;
-  private readonly mode: Mode = Mode.SIMPLE_GAME;
 
-  constructor(name: string, depth: number) {
+  private readonly difficulty: Difficulty;
+
+  /**
+   * @constructor
+   * @param {string} name Nombre del jugador  
+   * @param {Difficulty} difficulty Dificultad del jugador
+   */
+  constructor(name: string, difficulty: Difficulty) {
     super(name);
-    this.depth = depth;
+    this.difficulty = difficulty;
   }
 
-  // función para evaluar la utilidad de un estado del tablero
-  public evaluateBoard(board: Board): number {
-    const sosCount = board.checkSOS(this.mode);
-    return sosCount + Math.random() * 0.1;
+  /**
+   * Retorna la dificultad del jugador
+   * @returns {Difficulty} Dificultad del jugador
+   */
+  public getDifficulty(): Difficulty {
+    return this.difficulty;
   }
 
-  // algoritmo Minimax con poda alfa-beta
-  public minimax(
-    board: Board,
-    maximizingPlayer: boolean,
-    alpha: number,
-    beta: number,
-    currentDepth: number
-  ): [number, number] {
-    if (board.checkSOS(this.mode) > 0 || currentDepth === this.depth) {
-      return [0, this.evaluateBoard(board)];
+  /**
+   * Obtiene el movimiento del jugador
+   * @param {Board} board Tablero del juego
+   * @returns {[number, number, Letter]} [row, col, letter]
+   */
+  public getMove(board: Board): [number, number, Letter] {
+    const movement = new Movement(board);
+    if(this.difficulty === Difficulty.EASY){
+      return movement.getRandomCell();
     }
-
-    let bestRow = 0;
-    let bestColumn = 0;
-    let bestValue: number | null = null;
-
-    let currentLetter = maximizingPlayer ? Letter.O : Letter.S;
-
-    for (let i = 0; i < board.getRows(); i++) {
-      for (let j = 0; j < board.getColumns(); j++) {
-        if (board.getCell(i, j) === "") {
-          const newBoard = board.clone();
-          newBoard.setCell(i, j, currentLetter);
-          const [_, value] = this.minimax(
-            newBoard,
-            !maximizingPlayer,
-            alpha,
-            beta,
-            currentDepth + 1
-          );
-          if (
-            bestValue === null ||
-            (maximizingPlayer && value > bestValue) ||
-            (!maximizingPlayer && value < bestValue)
-          ) {
-            bestRow = i;
-            bestColumn = j;
-            bestValue = value;
-          }
-          if (maximizingPlayer) {
-            alpha = Math.max(alpha, value);
-          } else {
-            beta = Math.min(beta, value);
-          }
-          if (beta <= alpha) {
-            break;
-          }
-        }
-      }
+    else if(this.difficulty === Difficulty.MEDIUM){
+      return movement.getProximityCell();
     }
-    return [bestRow, bestColumn];
+    return [0, 0, Letter.EMPTY];
   }
+
 }
