@@ -1,5 +1,5 @@
 /**
- * @class GameMode
+ * @class Mode
  * @classdesc Representa el modo de juego del tablero.
  * @readonly
  * @enum {number}

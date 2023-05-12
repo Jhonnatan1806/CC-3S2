@@ -1,5 +1,25 @@
-export enum Difficulty{
+/**
+ * @class Difficulty
+ * @classdesc Representa la dificultad de un jugador IA.
+ * @readonly
+ * @enum {number}
+ */
+export enum Difficulty {
+  /**
+   * Dificultad fácil
+   * @type {number}
+   */
   EASY,
+
+  /**
+   * Dificultad media
+   * @type {number}
+   */
+
   MEDIUM,
-  HARD
+  /**
+   * Dificultad difícil
+   * @type {number}
+   */
+  HARD,
 }
