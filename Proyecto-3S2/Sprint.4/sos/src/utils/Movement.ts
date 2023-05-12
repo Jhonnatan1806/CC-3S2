@@ -6,12 +6,11 @@ import { Letter } from "./Letter";
  * @classdesc Clase que representa un movimiento en el tablero.
  */
 export class Movement {
-
   private readonly board: Board;
 
   /**
    * @constructor
-   * @param {Board} board 
+   * @param {Board} board
    */
   constructor(board: Board) {
     this.board = board;
@@ -42,11 +41,11 @@ export class Movement {
     if (this.board.isFull()) {
       throw new Error("The board is full");
     }
-  
+
     const rows = this.board.getRows();
     const cols = this.board.getColumns();
     let cellsWithLetter: Array<[number, number]> = [];
-  
+
     // Busca las celdas llenas en el tablero
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < cols; c++) {
@@ -55,7 +54,7 @@ export class Movement {
         }
       }
     }
-  
+
     if (cellsWithLetter.length === 0) {
       // No hay celdas llenas, devuelve una celda aleatoria en el tablero
       const randomRow = Math.floor(Math.random() * rows);
@@ -63,7 +62,7 @@ export class Movement {
       const letter = Math.random() < 0.5 ? Letter.S : Letter.O;
       return [randomRow, randomCol, letter];
     }
-  
+
     // Recorre las celdas del tablero en orden determinado
     for (let [r, c] of cellsWithLetter) {
       // Busca las celdas adyacentes vacías
@@ -89,7 +88,7 @@ export class Movement {
         }
       }
     }
-  
+
     throw new Error("No valid moves");
   }
 
@@ -101,5 +100,5 @@ export class Movement {
   public getMinimax(): [number, number, Letter] {
     // falta implementar
     return [0, 0, Letter.EMPTY];
-  }  
+  }
 }

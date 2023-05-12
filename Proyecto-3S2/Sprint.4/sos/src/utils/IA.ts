@@ -10,12 +10,11 @@ import { Board } from "./Board";
  * @extends Player
  */
 export class IA extends Player {
-
   private readonly difficulty: Difficulty;
 
   /**
    * @constructor
-   * @param {string} name Nombre del jugador  
+   * @param {string} name Nombre del jugador
    * @param {Difficulty} difficulty Dificultad del jugador
    */
   constructor(name: string, difficulty: Difficulty) {
@@ -38,13 +37,11 @@ export class IA extends Player {
    */
   public getMove(board: Board): [number, number, Letter] {
     const movement = new Movement(board);
-    if(this.difficulty === Difficulty.EASY){
+    if (this.difficulty === Difficulty.EASY) {
       return movement.getRandomCell();
-    }
-    else if(this.difficulty === Difficulty.MEDIUM){
+    } else if (this.difficulty === Difficulty.MEDIUM) {
       return movement.getProximityCell();
     }
     return [0, 0, Letter.EMPTY];
   }
-
 }

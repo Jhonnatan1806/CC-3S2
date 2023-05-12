@@ -75,8 +75,8 @@ export class Board {
 
   /**
    * Obtiene el valor de una celda del tablero.
-   * @param {number} row 
-   * @param {number} column 
+   * @param {number} row
+   * @param {number} column
    * @returns {string}
    */
   public getCell(row: number, column: number): string {
@@ -106,7 +106,7 @@ export class Board {
   /**
    * Chequea si existe SOS en el tablero en el modo simple.
    * @returns {number} 1 si existe SOS, 0 en caso contrario.
-   */ 
+   */
   public checkSimple(): number {
     const rows: string[] = this.grid.map((row) => row.join(""));
     const columns: string[] = this.grid.reduce(
@@ -130,5 +130,4 @@ export class Board {
     // falta implementar
     return 0;
   }
-
 }
