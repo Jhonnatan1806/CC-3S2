@@ -13,12 +13,13 @@
 
 |Nombre del archivo de código fuente| Código de producción o de prueba | # Líneas de código | 
 |---|---|---|
-|Board.ts | ![Board](Imagenes/Board.png)|  | 
-| Game.ts| ![Game](Imagenes/Game.png)| | 
-| Letter.ts| ![Letter](Imagenes/Letter.png)| | 
-| Mode.ts|![Mode](Imagenes/Mode.png) | | 
-|Player.ts |![Player](Imagenes/Player.png) | | 
-|Score.ts | ![Score](Imagenes/Score.png)| | 
+|Board.ts | ![Board](Imagenes/Board.png)| 134 | 
+| Game.ts| ![Game](Imagenes/Game.png)| 126 |
+| IA.ts| ![IA](Imagenes/IA.png)| 78 |
+| Letter.ts| ![Letter](Imagenes/Letter.png)| 25 | 
+| Mode.ts|![Mode](Imagenes/Mode.png) | 19 | 
+|Player.ts |![Player](Imagenes/Player.png) |57 | 
+|Score.ts | ![Score](Imagenes/Score.png)|45 | 
 
 ## Código de producción vs Nuevas historias de usuario/Criterios de aceptación
 
