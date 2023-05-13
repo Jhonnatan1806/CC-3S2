@@ -109,10 +109,13 @@ export class Game {
    */
   public makeMove(row: number, column: number, letter: Letter): void {
     if (this.board.getCell(row, column) !== "") {
-      throw new Error("Cell is not empty");
+      throw new Error("Cell is not empty.");
     }
     if (this.board.isFull()) {
       throw new Error("Game is over.");
+    }
+    if(this.isGameOver){
+      return;
     }
     this.board.setCell(row, column, letter);
     this.getCurrentPlayer().addPoints(this.board.checkSOS(this.mode));

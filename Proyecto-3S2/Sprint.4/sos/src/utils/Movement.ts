@@ -65,7 +65,7 @@ export class Movement {
 
     // Recorre las celdas del tablero en orden determinado
     for (let [r, c] of cellsWithLetter) {
-      // Busca las celdas adyacentes vacías
+      // Busca las celdas adyacentes vacias
       for (let dr = -1; dr <= 1; dr++) {
         for (let dc = -1; dc <= 1; dc++) {
           if (dr === 0 && dc === 0) {
@@ -81,7 +81,7 @@ export class Movement {
             nc < cols &&
             this.board.getCell(nr, nc) === Letter.EMPTY
           ) {
-            // Encontró una celda adyacente vacía, hace un movimiento aleatorio en esa celda
+            // Encontro una celda adyacente vacia, hace un movimiento aleatorio en esa celda
             const letter = Math.random() < 0.5 ? Letter.S : Letter.O;
             return [nr, nc, letter];
           }
@@ -93,7 +93,7 @@ export class Movement {
   }
 
   /**
-   * Encuentra una celda vacía adyacente a una celda llena
+   * Encuentra una celda vacia adyacente a una celda llena
    * @returns {[number, number, Letter]} [row, col, letter]
    * @see https://en.wikipedia.org/wiki/Minimax
    */

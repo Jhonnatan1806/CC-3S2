@@ -66,6 +66,34 @@ describe("Game", () => {
     });
   });
 
+    /**
+     * AC 4.2
+     * CUANDO el jugador seleccione una celda vacía
+     *  ENTONCES, el sistema debe colocar la letra S o O en la celda seleccionada.
+     */
+    test("AC 4.2", () => {
+      const board = new Board();
+      const players = [new Player("Red"), new Player("Blue")];
+      const mode = Mode.SIMPLE_GAME;
+      const game = new Game(board, players, mode);
+      game.makeMove(0, 0, Letter.S);
+      expect(game.getBoard().getCell(0, 0)).toBe(Letter.S);
+    });
+
+    /**
+     * AC 4.3
+     * CUANDO el jugador seleccione una celda que ya está ocupada
+     * ENTONCES, el sistema debe mostrar un mensaje de error indicando que la celda ya está ocupada.
+     */
+    test("AC 4.3", () => {
+      const board = new Board();
+      const players = [new Player("Red"), new Player("Blue")];
+      const mode = Mode.SIMPLE_GAME;
+      const game = new Game(board, players, mode);
+      game.makeMove(0, 0, Letter.S);
+      expect(() => game.makeMove(0, 0, Letter.O)).toThrow("Cell is not empty.");
+    });
+
   describe("getWinner()", () => {
     /**
      * AC 5.1
@@ -119,7 +147,7 @@ describe("Game", () => {
     /**
      * AC 7.1
      * CUANDO el tablero está completamente lleno y existan un jugador y la IA
-     * ENTONCES, el juego selecciona el ganador.
+     * ENTONCES, el juego selecciona el ganador o un empate.
      */
     test("AC 7.1", () => {
       const board = new Board();
@@ -140,26 +168,55 @@ describe("Game", () => {
       ];
       for (const movement of possibleMovements) {
         const [row, col, letter] = movement;
-        if (board.getCell(row, col) === Letter.EMPTY && !board.isFull()) {
-          game.makeMove(row, col, letter);
-          if (!board.isFull()) {
-            const [rowIA, colIA, letterIA] = ia.getMove(board);
-            game.makeMove(rowIA, colIA, letterIA);
-            if (board.isFull()) {
-              break;
-            }
-          } else {
-            break;
-          }
+        if (board.getCell(row, col) !== Letter.EMPTY) {
+          continue; // already filled, skip iteration
+        }
+        game.makeMove(row, col, letter);
+        if (board.isFull()) {
+          break; // end the game
+        }
+        const [rowIA, colIA, letterIA] = ia.getMove(board);
+        game.makeMove(rowIA, colIA, letterIA);
+        if (board.isFull()) {
+          break; // end the game
         }
       }
-      const winner = game.getWinner();
-      expect([players[0],players[1]]).toContain(winner);
-      if (winner === undefined) {
-        expect(() => game.getWinner()).toThrow("Draw.");
+      if (game.getGameOver()) {
+        expect([players[0],players[1]]).toContain(game.getWinner());
       } else {
-        expect(() => game.getWinner()).not.toThrow();
+        expect(() => game.getWinner()).toThrow("Draw.");
       }
     });
+
+    /**
+     * AC 7.2
+     * CUANDO la IA se enfrenta a la IA y el tablero esta lleno
+     * ENTONCES, el juego selecciona el ganador o un empate.
+     */
+    test("AC 7.2", () => {
+      const board = new Board();
+      const ia1 = new IA("Red", Difficulty.EASY); 
+      const ia2 = new IA("Blue", Difficulty.EASY);
+      const mode = Mode.SIMPLE_GAME;
+      const game = new Game(board, [ia1,ia2], mode);
+      for ( let i: number = 0; i < 9 ; i++) {
+        const [rowIA, colIA, letterIA] = ia1.getMove(board);
+        game.makeMove(rowIA, colIA, letterIA);
+        if (board.isFull()) {
+          break; // end the game
+        }
+        const [rowIA2, colIA2, letterIA2] = ia2.getMove(board);
+        game.makeMove(rowIA2, colIA2, letterIA2);
+        if (board.isFull()) {
+          break; // end the game
+        }
+      }
+      if (game.getGameOver()) {
+        expect([ia1,ia2]).toContain(game.getWinner());
+      } else {
+        expect(() => game.getWinner()).toThrow("Draw.");
+      }
+    });
+
   });
 });

@@ -13,13 +13,19 @@
 
 |Nombre del archivo de código fuente| Código de producción o de prueba | # Líneas de código | 
 |---|---|---|
-|Board.ts | ![Board](Imagenes/Board.png)| 134 | 
-| Game.ts| ![Game](Imagenes/Game.png)| 126 |
-| IA.ts| ![IA](Imagenes/IA.png)| 78 |
-| Letter.ts| ![Letter](Imagenes/Letter.png)| 25 | 
-| Mode.ts|![Mode](Imagenes/Mode.png) | 19 | 
-|Player.ts |![Player](Imagenes/Player.png) |57 | 
-|Score.ts | ![Score](Imagenes/Score.png)|45 | 
+| Board.ts | Producción | 134 |
+| Difficulty.ts | Producción | 26 |
+| Game.ts| Producción | 126 |
+| IA.ts| Producción | 47 |
+| Letter.ts| Producción | 25 | 
+| Mode.ts | Producción | 19 | 
+| Movement.ts| Producción | 104 | 
+| Player.ts | Producción |57 | 
+| Score.ts | Producción |45 |
+| board.test.ts | Prueba | 78 | 
+| game.test.ts | Prueba | 119 | 
+| ia.test.ts | Prueba | 40 | 
+| player.test.ts | Prueba | 56 | 
 
 ## Código de producción vs Nuevas historias de usuario/Criterios de aceptación
 
@@ -35,7 +41,7 @@
 |ID y Nombre de Historia de Usuario| AC ID | Entrada de caso de prueba | Salida esperada | 
 |---|---|---|---|
 |1. Estrategia única y variada | 1.1 | | | 
-| 2. Errores controlados| 2.1 | | | 
+|2. Errores controlados| 2.1 | | | 
 |3. Respuesta rápida | 3.1 | | |  
 |4. Comportamiento justo y ético | 4.1 | | |  
 
